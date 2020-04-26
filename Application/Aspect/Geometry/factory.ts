@@ -33,7 +33,7 @@ export const Factory =
           })
      },
 
-     // To get triangle, square, [panta|hexa]gon points
+     // To get points of triangle, square, [panta|hexa]gon
      //
      // var a = Math.PI*2/4
      // for ( var i = 0 ; i != 4 ; i++ )

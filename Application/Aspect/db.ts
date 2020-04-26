@@ -21,7 +21,9 @@ const ASPECT  = Symbol.for ( "ASPECT" )
 
 type $In <$ extends $Shape = $Shape> = Optional <$, "context">
 
-
+/**
+ * Assigne si besoin le contexte "aspect" au noeud
+ */
 function normalize ( node: $In )
 {
      if ( "context" in node )

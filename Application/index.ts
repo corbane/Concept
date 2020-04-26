@@ -7,15 +7,12 @@ import "./Aspect/index.js"
 
 export * from "./Data/index.js"
 
-
-import "./context-menu.js"
 import "./menu.js"
 import "./panel.js"
 import "./area.js"
 
 export * from "./command.js"
 export * from "./area.js"
-
 
 import { area, contextualMenu } from "./area.js"
 import { panel } from "./panel.js"
