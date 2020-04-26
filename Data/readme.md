@@ -1,12 +1,3 @@
-<style>
-blockquote {
-     border: 1px solid #eee !important;
-     border-radius: .25rem !important;
-     border-left-color: #f0ad4e !important;
-     border-left-width: .25rem !important;
-     padding: 1.25rem !important;
-}
-</style>
 
 
 # `Node`
