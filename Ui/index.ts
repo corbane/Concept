@@ -19,7 +19,7 @@ export * from "./Component/Slideshow/index.js"
 export * from "./Component/Toolbar/index.js"
 export * from "./Component/Panel/index.js"
 export * from "./Component/SideMenu/index.js"
-export * from "./Component/Circular-menu/index.js"
+export * from "./Component/Circular-Menu/index.js"
 export * from "./Component/Overlay/index.js"
 
 export * from "./Component/Menu/index.js"
