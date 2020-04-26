@@ -1,6 +1,6 @@
 {
   "name": "concept",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Vrecq Jean-marie",
   "license": "GNU GPLv3",
   "main": "out/index.js",
