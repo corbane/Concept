@@ -56,9 +56,4 @@ La classe `Factory` permet de définir ces associations et de créer les instanc
 Son utilité est de faciliter la création de différentes représentations pour un même noeud de données.
 Par exemple, un noeud définissant une personne est dans l'espace de dessin de l'application représenté par un cercle avec un avatar. Dans l'espace `Propriétés`, cette même personne sera représentée par une description, sa photo et probablement des boutons de commandes. Ou bien encore elle peut être représentée par un graphe affichant ces relations.
 
-```ts
-ui.make <Drawing> ( Personne );
-ui.make <Properties> ( Personne );
-ui.make <Graph> ( Personne );
-```
 > Cette classe est surtout une classe utilitaire. Elle n'est pas indispensable à l'application.
