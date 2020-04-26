@@ -1,3 +1,3 @@
 /// <reference path="./types.d.ts" />
 
-export { countData, getData, setData } from "./db.js"
+export { countData, getNode, setNode } from "./db.js"

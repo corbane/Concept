@@ -25,9 +25,9 @@ function normalize ( node: $In )
 
 
 
-export function getData <$ extends $Thing> ( node: $In ): $
-export function getData <$ extends $Thing> ( ... path: string [] ): $
-export function getData ()
+export function getNode <$ extends $Thing> ( node: $In ): $
+export function getNode <$ extends $Thing> ( ... path: string [] ): $
+export function getNode ()
 {
      if ( arguments.length == 0 )
           return
@@ -38,7 +38,7 @@ export function getData ()
           return Data.get ( CONTEXT, ... arguments )
 }
 
-export function setData <$ extends $Thing> ( node: $In <$> )
+export function setNode <$ extends $Thing> ( node: $In <$> )
 {
      Data.set ( normalize ( node ) )
 }

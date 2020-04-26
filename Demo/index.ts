@@ -12,12 +12,12 @@ const area = app.area
 const view = area.createView ( "compétances" )
 area.use ( view )
 
-// Person
+// Ici on ajoute des personnes à l’application.
 
 const personNames = []
 for ( var i = 1 ; i <= 20 ; i++ )
 {
-     app.setData <$Person> ({
+     app.setNode <$Person> ({
           type     : "person",
           id       : "user" + i,
           firstName: faker.name.firstName (),
@@ -26,7 +26,7 @@ for ( var i = 1 ; i <= 20 ; i++ )
           isCaptain: randomInt (0,4) == 1 //i % 4 == 0,
      })
 
-     app.setData <$Person> ({
+     app.setNode <$Person> ({
           type     : "person",
           id       : "user" + (20 + i),
           firstName: faker.name.firstName (),
@@ -67,7 +67,7 @@ const badgePresets = { // Partial <$Badge>
 }
 
 for ( const name in badgePresets )
-     app.setData ({ context: "concept-data", type: "badge", ... badgePresets [name] })
+     app.setNode ({ context: "concept-data", type: "badge", ... badgePresets [name] })
 
 // Skills
 
@@ -80,10 +80,10 @@ for ( const name in badgePresets )
           const name = personNames.splice ( randomInt ( 1, personNames.length ), 1 ) [0]
 
           if ( name )
-               people.push ( app.getData <$Person> ( "person", name ) )
+               people.push ( app.getNode <$Person> ( "person", name ) )
      }
 
-     app.setData <$Skill> ({
+     app.setNode <$Skill> ({
           context: "concept-data",
           type   : "skill",
           id     : name,

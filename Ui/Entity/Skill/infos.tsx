@@ -18,7 +18,7 @@ export class SkillViewer extends Component <$SkillViewer>
 
           for ( const name of skill.items )
           {
-               const person = db.getData <$Person> ( name )
+               const person = db.getNode <$Person> ( name )
 
                const card = <div class="w3-card-4 person-card">
                     <img src={ person.avatar } alt="Avatar"/>

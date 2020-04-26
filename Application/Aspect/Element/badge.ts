@@ -21,7 +21,7 @@ export class Badge extends Shape
 
           const { group } = this
 
-          const entity = db.getData <$Badge> ( this.config.data )
+          const entity = db.getNode <$Badge> ( this.config.data )
 
           const text = new fabric.Textbox ( entity.emoji || "X", {
                fontSize: this.displaySize (),

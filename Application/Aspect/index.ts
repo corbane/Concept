@@ -9,7 +9,7 @@ export { Badge }     from "./Element/badge.js"
 export { Container } from "./Element/group.js"
 
 
-import { getData} from "../Data/db.js"
+import { getNode} from "../Data/db.js"
 import { getAspect, defineAspect, setAspect } from "./db.js"
 import { Shape } from "./Element/shape.js"
 import { $Shape } from "./Element/shape.js"
@@ -75,7 +75,7 @@ setAspect <$Shape> ({
 
      onCreate ( skill: $Skill, aspect )
      {
-          const data = getData ({
+          const data = getNode ({
                type: "badge",
                id  : skill.icon,
           })
@@ -88,7 +88,7 @@ setAspect <$Shape> ({
 
      onTouch ( shape )
      {
-          const skill = getData <$Skill> ({
+          const skill = getNode <$Skill> ({
                type: shape.config.type,
                id  : shape.config.id
           })

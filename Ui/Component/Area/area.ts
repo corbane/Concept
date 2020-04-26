@@ -115,7 +115,7 @@ export class Area
 
           if ( typeof arguments [0] == "string" )
           {
-               const node = db.getData ( ... arguments as any as string [] )
+               const node = db.getNode ( ... arguments as any as string [] )
                const shp = aspect.getAspect ( node )
                active.children.push ( shp )
                fcanvas.add ( shp.group )
