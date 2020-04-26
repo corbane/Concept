@@ -3,7 +3,7 @@ import resolve from "rollup-plugin-node-resolve"
 import sourcemaps from 'rollup-plugin-sourcemaps'
 
 export default {
-    input: ".out/Demo/index.js",
+    input: "Demo/out/Demo/index.js",
     external: ["fabric", "faker", "fabric/fabric-impl"],
     output: {
       file     : "Demo/js/index.js",
