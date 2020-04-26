@@ -1,7 +1,7 @@
 
 import "../Ui/db.js"
 import "../Ui/Component/Slideshow/index.js"
-import "./Component/infos.js"
+//import "./Component/infos.js"
 import "../Ui/Entity/Skill/infos.js"
 
 import * as ui from "../Ui/index.js"
