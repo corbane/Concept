@@ -1,5 +1,5 @@
 
-## Rectangel to Transform Matrix
+## Rectangle to Transform Matrix
 
 - http://jsfiddle.net/dFrHS/1/
 - https://stackoverflow.com/questions/35819142/calculate-a-2d-homogeneous-perspective-transformation-matrix-from-4-points-in-ma
