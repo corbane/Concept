@@ -1,0 +1,20 @@
+{
+    "include": [
+        "Demo/index.ts"
+    ],
+    "compilerOptions": {
+        "lib": [ "es2020", "dom" ],
+        "jsx": "react",
+        "jsxFactory": "xnode",
+        //"moduleResolution": "node",
+
+        "target"        : "es6",
+        "module"        : "es6",
+        "outDir"        : "Demo/out",
+        "inlineSourceMap": true,
+        "removeComments": false,
+        "declaration"   : true,
+        "declarationMap" : true,
+        "declarationDir": "typings"
+    }
+}

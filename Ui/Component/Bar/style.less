@@ -1,0 +1,31 @@
+
+.bar {
+    width: 100%;
+    overflow: hidden;
+
+    & > * {
+        float  : left;
+        width  : auto;
+        outline: 0;
+        border : none;
+        display: block;
+        padding: 8px 16px;
+    }
+
+    &.vertical > * {
+        float      : none;
+        width      : 100%;
+        text-align : left;
+        white-space: normal;
+    }
+
+    &.vertical.center > * {
+        text-align: center;
+    }
+}
+
+.center .bar {
+    display: inline-block;
+    width: auto;
+}
+

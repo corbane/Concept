@@ -1,0 +1,66 @@
+
+//.toolbar {
+//    position: relative;
+//    width   : 100%;
+//    display : flex;
+//    overflow: hidden;
+//
+//    &.vertical {
+//        width: auto;
+//        height: 100%;
+//    }
+//}
+
+//.toolbar-slide {
+//    display: flex;
+//    position: relative;
+//    flex-direction: row;
+//    height: 100%;
+//
+//    .toolbar.vertical > & {
+//        writing-mode: vertical-rl;
+//        height: auto;
+//        width : 100%;
+//    }
+//}
+
+//.toolbar-slide > * {
+//    height: 100%;
+//
+//    .toolbar.vertical > & {
+//        height: auto;
+//        width : 100%;
+//    }
+//}
+
+.toolbar-background {
+    .base_button();
+    position: absolute;
+    height  : 100%;
+    width   : 100%;
+}
+
+/* STYLE */
+
+.toolbar {
+    &.roll-up {
+        border-top: 3px solid @dark-teal;
+    }
+    &.roll-down {
+        border-bottom: 3px solid @dark-teal;
+    }
+    &.roll-left {
+        border-left: 3px solid @dark-teal;
+    }
+    &.roll-right {
+        border-right: 3px solid @dark-teal;
+    }
+}
+
+.toolbar .button {
+    background-color: @teal;
+
+    &:hover {
+        background-color: @light-teal;
+    }
+}

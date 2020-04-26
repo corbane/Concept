@@ -1,0 +1,26 @@
+.concept-infos .people {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  align-items: start;
+}
+.person-card {
+  background-color: white;
+  position: relative;
+}
+.person-card label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  background-color: white;
+  opacity: 0.75;
+}
+.person-card label b {
+  opacity: 1;
+}
+.person-card img {
+  width: 150px;
+  height: 150px;
+}
+/*# sourceMappingURL=application.css.map */

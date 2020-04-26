@@ -1,0 +1,23 @@
+var selection;
+const config = defaultConfig();
+function defaultConfig() {
+    return {
+        onOverObject: null,
+        onOutObject: null,
+        onTouchObject: null,
+        onDoubleTouchObject: null,
+        onTouchArea: null,
+    };
+}
+export function lock() {
+}
+export function unlock() {
+}
+function init() {
+    console.log("ontouchstart" in window);
+    window.addEventListener("pointerdown", event => { console.log("pointerdown", event); });
+    window.addEventListener("pointermove", event => { console.log("pointermove", event); });
+    window.addEventListener("pointerup", event => { console.log("pointerup", event); });
+}
+//init ()
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXZlbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9VaS9CYXNlL2V2ZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVNBLElBQUksU0FBUyxDQUFBO0FBQ2IsTUFBTSxNQUFNLEdBQUcsYUFBYSxFQUFHLENBQUE7QUFFL0IsU0FBUyxhQUFhO0lBRWpCLE9BQU87UUFDRixZQUFZLEVBQVMsSUFBa0I7UUFDdkMsV0FBVyxFQUFVLElBQWtCO1FBQ3ZDLGFBQWEsRUFBUSxJQUFrQjtRQUN2QyxtQkFBbUIsRUFBRSxJQUFrQjtRQUN2QyxXQUFXLEVBQVUsSUFBd0M7S0FDakUsQ0FBQTtBQUNOLENBQUM7QUFHRCxNQUFNLFVBQVUsSUFBSTtBQUdwQixDQUFDO0FBRUQsTUFBTSxVQUFVLE1BQU07QUFHdEIsQ0FBQztBQUdELFNBQVMsSUFBSTtJQUVSLE9BQU8sQ0FBQyxHQUFHLENBQUcsY0FBYyxJQUFJLE1BQU0sQ0FBRSxDQUFBO0lBQ3hDLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBRyxhQUFhLEVBQUUsS0FBSyxDQUFDLEVBQUUsR0FBRyxPQUFPLENBQUMsR0FBRyxDQUFHLGFBQWEsRUFBRSxLQUFLLENBQUUsQ0FBQSxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQzNGLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBRyxhQUFhLEVBQUUsS0FBSyxDQUFDLEVBQUUsR0FBRyxPQUFPLENBQUMsR0FBRyxDQUFHLGFBQWEsRUFBRSxLQUFLLENBQUUsQ0FBQSxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQzNGLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBRyxXQUFXLEVBQUksS0FBSyxDQUFDLEVBQUUsR0FBRyxPQUFPLENBQUMsR0FBRyxDQUFHLFdBQVcsRUFBSSxLQUFLLENBQUUsQ0FBQSxDQUFDLENBQUMsQ0FBQyxDQUFBO0FBQ2hHLENBQUM7QUFDRCxTQUFTIn0=

@@ -1,0 +1,4 @@
+import { Component } from "../../Core/Component/index.js";
+export class Command extends Component {
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9VaS9Db21wb25lbnQvQ29tbWFuZC9pbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFjLFNBQVMsRUFBRSxNQUFNLCtCQUErQixDQUFBO0FBWXJFLE1BQU0sT0FBTyxPQUFRLFNBQVEsU0FBUztDQUdyQyJ9

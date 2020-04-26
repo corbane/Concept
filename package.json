@@ -1,0 +1,19 @@
+{
+  "name": "concept",
+  "version": "1.0.0",
+  "author": "Vrecq Jean-marie",
+  "license": "GNU GPLv3",
+  "main": "out/index.js",
+  "typings": "typings",
+  "dependencies": {
+    "@types/fabric": "^3.4.0",
+    "@types/faker": "^4.1.6",
+    "fabric": "^3.4.0",
+    "faker": "^4.1.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.25.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2"
+  }
+}

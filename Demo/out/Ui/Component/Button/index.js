@@ -1,0 +1,9 @@
+import { set } from "../../db.js";
+export { Button } from "./html.js";
+export const $default = {
+    type: "button",
+    id: undefined,
+    icon: undefined,
+};
+set(["button"], $default);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9VaS9Db21wb25lbnQvQnV0dG9uL2luZGV4LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQSxPQUFPLEVBQUUsR0FBRyxFQUFFLE1BQU0sYUFBYSxDQUFBO0FBaUJqQyxPQUFPLEVBQUUsTUFBTSxFQUFFLE1BQU0sV0FBVyxDQUFBO0FBRWxDLE1BQU0sQ0FBQyxNQUFNLFFBQVEsR0FBRztJQUNuQixJQUFJLEVBQUUsUUFBb0I7SUFDMUIsRUFBRSxFQUFJLFNBQVM7SUFDZixJQUFJLEVBQUUsU0FBUztDQUNuQixDQUFBO0FBRUQsR0FBRyxDQUFhLENBQUUsUUFBUSxDQUFFLEVBQUUsUUFBUSxDQUFFLENBQUEifQ==

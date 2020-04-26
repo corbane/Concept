@@ -1,0 +1,35 @@
+
+@button_min_width: 120px;
+@button_height   : 60px;
+@button_padding  : 20px;
+
+.base_button () {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    white-space    : nowrap;
+    
+    margin : 0;
+    padding: @button_padding;
+
+    cursor     : pointer;
+    user-select: none;
+}
+
+.button {
+    .base_button();
+
+    &.horizontal {
+        min-width: @button_min_width;
+        height: @button_height;
+    }
+    &.vertical {
+        width: @button_height;
+        min-height: @button_min_width;
+    }
+}
+
+.button.square {
+    width: @button_height;
+    height: @button_height;
+}

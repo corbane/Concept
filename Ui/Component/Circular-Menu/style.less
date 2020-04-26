@@ -1,0 +1,27 @@
+
+.radial-menu {
+    position: absolute;
+    transition: all 0.3s;
+    transform-origin: center;
+    //filter: drop-shadow( 0 0 50px rgba(0, 0, 0, .7));
+    filter: drop-shadow(0 0 10px rgba(98, 148, 131, 0.7));
+    display: inline-block;
+    fill: transparent;
+}
+
+.radial-menu.close {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+}
+
+.radial-menu .button > circle {
+    cursor: pointer;
+    fill: white;
+    stroke: aquamarine;
+    stroke-width: 5px;
+    pointer-events: visible;
+}
+
+.radial-menu > .button:hover > circle {
+    stroke: rgb(93, 177, 149);
+}

@@ -1,0 +1,148 @@
+
+//  .side-menu
+//      .side-menu-main-button
+//      .side-menu-header
+//      .side-menu-content
+
+//  LAYOUT
+
+@header_size: 80px;
+@padding    : 20px;
+
+.side-menu {
+    position: fixed;
+    overflow: auto;
+    z-index : 2;
+    overflow: visible;
+    left      : 0;
+    right     : 0;
+    bottom    : 0;
+    top       : 0;
+
+    &.animate {
+        transition: all 0.4s ease 0s;
+    }
+
+    &.vertical {
+        max-height: 90%;
+        min-height: 0%;
+    }
+    &.vertical.open {
+        height: 200px; // Mis à jour par le script
+    }
+    &.vertical.close {
+        height: 0;
+    }
+
+    &.horizontal {
+        max-width: 90%;
+        min-width: 0%;
+        height: 100%;
+    }
+    &.horizontal.open {
+        width: 200px; // Mis à jour par le script
+    }
+    &.horizontal.close {
+        width: 0;
+    }
+
+    &.top {
+        bottom: unset !important;
+    }
+    &.bottom {
+        top: unset !important;
+    }
+    &.left {
+        right: unset !important;
+    }
+    &.right {
+        left: unset !important;
+    }
+}
+
+.side-menu-main-button {
+    .base_button();
+    width   : @header_size;
+    height  : @header_size;
+    position: relative;
+
+    .top    > & { bottom: -@header_size; }
+    .bottom > & { top   : -@header_size; }
+    .right  > & { left  : -@header_size; }
+    //.left   > & { right : -@header_size; }
+}
+
+.side-menu-header {
+    position: relative;
+
+    display : flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    .vertical > & {
+        width: 100%;
+        //height: @header_size;
+        flex-direction: row;
+    }
+    .horizontal > & {
+        width: @header_size;
+        //height: 100%;
+        flex-direction: column;
+    }
+
+    // Affiche les bouttons si le panneau est fermé
+    .bottom > & { bottom: @header_size; }
+    .right  > & { right : @header_size; }
+    .top    > & { top   : 100%; }
+    .left   > & { left  : 100%; }
+}
+
+.side-menu-content {
+    height       : 100%;
+    width        : 100%;
+    overflow     : auto;
+    margin       : 0;
+
+    // Ici ont supprime les décalages dus a la hauteur de la bar de menu
+    .vertical > & {
+        position: relative;
+        bottom  : @header_size;
+    }
+    .horizontal > & {
+        position: absolute;
+        top     : 0;
+    }
+
+    //.vertical.close   > & { overflow-y: hidden; }
+    //.horizontal.close > & { overflow-y: hidden; }
+
+    &.hidden, &.hidden * {
+        overflow: hidden;
+    }
+}
+
+//  STYLE
+
+@LigthTeal     : #00c0aa;
+@DarkGray      : #333333;
+
+.side-menu-header {
+    font-size: 1.3em;
+}
+.side-menu-content {
+    background-color: white;
+}
+
+.side-menu-content {
+    background-color: @LigthTeal;
+}
+
+
+.side-menu-main-button {
+    background-color: @LigthTeal;
+
+    &:hover {
+        background-color: #6dd1c5;
+    }
+}
+
