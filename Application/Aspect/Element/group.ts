@@ -1,9 +1,7 @@
 
 import { Geometry } from "../../../Lib/index.js"
-
 import { getAspect } from "../db.js"
-
-import { Shape, $Shape } from "./shape.js"
+import { Shape } from "./shape.js"
 
 export class Container <$ extends $Shape <$Group> = $Shape <$Group>> extends Shape <$>
 {

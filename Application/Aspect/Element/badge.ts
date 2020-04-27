@@ -1,7 +1,6 @@
 
-import * as db from "../../Data/db.js"
-
-import { Shape, $Shape } from "./shape.js"
+import * as db from "../../data.js"
+import { Shape } from "./shape.js"
 
 export type BadgePosition = { angle: number, offset: number }
 

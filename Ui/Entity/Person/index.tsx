@@ -1,6 +1,7 @@
 
-import { xnode, Component, define } from "../../index.js"
-import * as db from "../../../Application/Data/db.js"
+import { Component } from "../../Base/Component/index.js"
+import { xnode } from "../../Base/xnode.js"
+import { define } from "../../db.js"
 
 declare global
 {

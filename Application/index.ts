@@ -3,21 +3,18 @@ import "../Lib/index.js"
 import "../Data/index.js"
 import "../Ui/index.js"
 
+import "./command.js"
+//import "./menu.js"
+//import "./panel.js"
+//import "./area.js"
+
 import "./Aspect/index.js"
 
-export * from "./Data/index.js"
+export * from "./data.js"
 
-import "./menu.js"
-import "./panel.js"
-import "./area.js"
-
-export * from "./command.js"
-export * from "./area.js"
-
-import { area, contextualMenu } from "./area.js"
-import { panel } from "./panel.js"
-import { menu } from "./menu.js"
-import { onCommand } from "./command.js"
+//export * from "./area.js"
+import { area } from "./area.js"
+export { area };
 
 export function width ()
 {
@@ -35,13 +32,3 @@ export function refresh ()
      area.fcanvas.requestRenderAll ()
 }
 
-onCommand ( "open-menu", () =>
-{
-     panel.close ()
-     contextualMenu.hide ()
-})
-onCommand ( "open-panel", () =>
-{
-     menu.close ()
-     contextualMenu.hide ()
-})

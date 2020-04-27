@@ -1,4 +1,4 @@
-/// <reference path="../../Data/index.ts" />
+/// <reference path="../Data/index.ts" />
 
 //export as namespace global
 

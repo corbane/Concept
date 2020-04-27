@@ -1,8 +1,9 @@
 
 
 import { set }      from "../../db.js"
-import { Commands } from "../../Base/command.js"
+//import { Commands } from "../../Base/command.js"
 import { xnode }    from "../../Base/xnode.js"
+import { command } from "../../command.js"
 
 declare global
 {
@@ -27,7 +28,8 @@ const _Button = ( data: $Button ) =>
                return
 
           if ( data.command )
-               Commands.current.run ( data.command )
+               //Commands.current.run ( data.command )
+               command ( data.command )
      }
 
      const node =

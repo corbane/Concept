@@ -3,7 +3,7 @@ declare global
 {
      export type $AnyComponents
                = $Button
-               | $Panel
+               //| $Panel
                | $SideMenu
                | $Block
                | $Phantom

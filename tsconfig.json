@@ -7,6 +7,7 @@
         "jsx": "react",
         "jsxFactory": "xnode",
         //"moduleResolution": "node",
+        "types": ["./globals"],
 
         "target"        : "es6",
         "module"        : "es6",

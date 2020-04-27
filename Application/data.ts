@@ -1,7 +1,7 @@
-/// <reference path="./types.d.ts" />
+/// <reference path="./nodes.d.ts" />
 
-import { Database } from "../../Data/index.js"
-import { Writable, Optional } from "../../Lib/index.js"
+import { Database } from "../Data/index.js"
+import { Writable, Optional } from "../Lib/index.js"
 
 const CONTEXT = "concept-data"
 const Data = new Database ()

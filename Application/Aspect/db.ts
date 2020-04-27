@@ -1,8 +1,8 @@
-/// <reference path="../typings.d.ts" />
+// <reference path="../typings.d.ts" />
 //import * as fabric from "fabric/fabric-impl"
 
 import { Database, Factory } from "../../Data/index.js"
-import { Shape, $Shape } from "./Element/shape.js"
+import { Shape } from "./Element/shape.js"
 import { Writable, Optional } from "../../Lib/index.js"
 
 

@@ -5,13 +5,14 @@ https://prezi.com/p/9jqe2wkfhhky/la-bulloterie-tpcmn/
 https://movilab.org/index.php?title=Utilisateur:Aur%C3%A9lienMarty
 */
 
-//import * as fabric from "fabric/fabric-impl.js"
 
 import { Geometry } from "../../../Lib/index.js"
 
 import { Shape } from "../../../Application/Aspect/Element/shape.js"
 import * as aspect from "../../../Application/Aspect/db.js"
-import * as db from "../../../Application/Data/db.js"
+import * as db from "../../../Application/data.js"
+
+import "fabric"
 
 fabric.Object.prototype.padding            = 0
 fabric.Object.prototype.objectCaching      = false
@@ -57,6 +58,7 @@ export class Area
 
      overFObject: fabric.Object = undefined
 
+     static currentEvent: fabric.IEvent
      onOverObject  = null as ( obj: Shape ) => void
      onOutObject   = null as ( obj: Shape ) => void
      onTouchObject = null as ( obj: Shape ) => void
@@ -104,8 +106,8 @@ export class Area
           return active
      }
 
-     add ( ... shapes: (Shape | $Node) [] )
-     add ( ... path: string [] )
+     add ( ... shapes: (Shape | $Node) [] ): void
+     add ( ... path: string [] ): void
      add ()
      {
           const { active, fcanvas } = this
@@ -314,15 +316,17 @@ export class Area
                     {
                          const element = aspect.getAspect ( fevent.target )
 
+                         Area.currentEvent = fevent;
                          if ( element )
                               this.onTouchObject ( element )
+                         Area.currentEvent = null;
 
                          fevent.e.stopImmediatePropagation ()
-
                          return
                     }
                     else
                     {
+
                          return reset ()
                     }
                }
@@ -339,8 +343,10 @@ export class Area
                     {
                          const element = aspect.getAspect ( fevent.target )
 
+                         Area.currentEvent = fevent;
                          if ( element )
                               this.onDoubleTouchObject ( element )
+                         Area.currentEvent = null;
                     }
 
                     last_click   = -1
@@ -348,8 +354,10 @@ export class Area
                // Si le pointer est au-dessus d’une zone vide.
                else
                {
+                    Area.currentEvent = fevent;
                     if ( this.onTouchArea )
                          this.onTouchArea ( pos.x, pos.y )
+                    Area.currentEvent = null;
                }
 
                fevent.e.stopImmediatePropagation ()
@@ -370,8 +378,10 @@ export class Area
                {
                     const element = aspect.getAspect ( fevent.target )
 
+                    Area.currentEvent = fevent;
                     if ( element )
                          this.onOverObject ( element )
+                    Area.currentEvent = null;
                }
           })
 
@@ -383,8 +393,10 @@ export class Area
                {
                     const element = aspect.getAspect ( fevent.target )
 
+                    Area.currentEvent = fevent;
                     if ( element )
                          this.onOutObject ( element )
+                    Area.currentEvent = null;
                }
           })
      }

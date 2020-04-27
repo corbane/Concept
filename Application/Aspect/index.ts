@@ -2,21 +2,20 @@
 
 export { defineAspect, getAspect, setAspect } from "./db.js"
 
-export { Geometry, $Geometry } from "./Geometry/geometry.js"
-export { Shape, $Shape, $ShapeEvents } from "./Element/shape.js"
+export { Geometry } from "./geometry.js"
+export { Shape } from "./Element/shape.js"
 export { Note }      from "./Element/note.js"
 export { Badge }     from "./Element/badge.js"
 export { Container } from "./Element/group.js"
 
 
-import { getNode} from "../Data/db.js"
+import { getNode} from "../data.js"
 import { getAspect, defineAspect, setAspect } from "./db.js"
 import { Shape } from "./Element/shape.js"
-import { $Shape } from "./Element/shape.js"
 import { Container } from "./Element/group.js"
 import { Badge }     from "./Element/badge.js"
+import { command } from "../../Ui/index.js"
 
-import { runCommand } from "../command.js"
 
 defineAspect ( Shape    , "person" /* , { onCreate: () => ..., onTouch: () => ... } */ )
 defineAspect ( Container, "skill" )
@@ -88,12 +87,13 @@ setAspect <$Shape> ({
 
      onTouch ( shape )
      {
-          const skill = getNode <$Skill> ({
-               type: shape.config.type,
-               id  : shape.config.id
-          })
+          // const skill = getNode <$Skill> ({
+          //      type: shape.config.type,
+          //      id  : shape.config.id
+          // })
+          // command ( "open-infos-panel", skill ).run ()
 
-          runCommand ( "open-infos-panel", skill )
+          command ( "open-infos-panel" ).run ()
      },
 
      onDelete: undefined

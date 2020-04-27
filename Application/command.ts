@@ -1,41 +1,127 @@
 
-import { PanelCommands } from "./panel.js"
-import { MenuCommands } from "./menu.js"
-import { AreaCommands } from "./area.js"
-import { Commands as cmd } from "../Ui/Base/command.js"
+import { menu , } from "./menu.js"
+import { panel, } from "./panel.js"
+import { area , contextualMenu } from "./area.js"
+import { command } from "../Ui/command.js"
 
-export type CommandNames = keyof Commands
 
-type Commands = PanelCommands
-               & MenuCommands
-               & AreaCommands
-
-export const addCommand = cmd.current.add.bind (cmd.current) as
+command ( "open-menu", () =>
 {
-     <K extends CommandNames> ( name: K, callback: Commands [K] ): void
-     ( name: string, callback: ( ...args: any ) => any ): void
+     panel.close ()
+     contextualMenu.hide ()
+})
+command ( "open-panel", () =>
+{
+     menu.close ()
+     contextualMenu.hide ()
+})
+
+
+// PANELS COMMANDS
+
+import * as ui from "../Ui/index.js"
+import { Slideshow } from "../Ui/index.js"
+import { SkillViewer } from "../Ui/Entity/Skill/index.js"
+import { getNode } from "./data.js";
+import { getAspect } from "./Aspect/db.js";
+import { Area } from "../Ui/Component/Area/area.js"
+
+const slideshow  = ui.pick <Slideshow>   ( "slideshow", "panel-slideshow" )
+const slideInfos = ui.pick <SkillViewer> ( "skill-viewer", "slide-skill" )
+
+command ( "open-panel", ( name, ... content ) =>
+{
+     // if ( name )
+     //      slideshow.show ( name, ... content )
+     // else
+     //      panel.open ()
+})
+
+command ( "open-infos-panel", ( e ) =>
+{
+     const aspect = getAspect ( Area.currentEvent.target )
+
+     if ( aspect )
+     {
+          const skill = getNode <$Skill> ({
+               type: aspect.config.type,
+               id  : aspect.config.id
+          })
+
+          if ( skill )
+          {
+               slideInfos.display ( skill as any )
+               panel.open ()
+          }
+     }
+})
+
+command ( "close-panel" , () =>
+{
+     panel.close ()
+})
+
+// AREA EVENTS
+
+area.onDoubleTouchObject = ( shape ) =>
+{
+     if ( shape.config.onTouch != undefined )
+          shape.config.onTouch ( shape )
 }
 
-export const runCommand = cmd.current.run.bind (cmd.current) as
+area.onTouchArea = ( x, y ) =>
 {
-     <K extends CommandNames> ( name: K, ... args: Parameters <Commands [K]> ): void
-     ( name: string, ... args: any ): void
+     command ( "open-contextal-menu" ).run ()
+     //run Command ( "open-contextal-menu", x, y )
 }
 
-export const hasCommand = cmd.current.has.bind (cmd.current) as
-{
-     ( key: CommandNames ): boolean
-     ( key: string ): boolean
-}
 
-export const onCommand = cmd.current.on.bind (cmd.current) as
-{
-     ( name: CommandNames, callback: () => void ): void
-     ( name: string, callback: () => void ): void
-}
+// AREA COMMANDS
 
-export const removeCommand = cmd.current.remove.bind (cmd.current) as
+//export type AreaCommands =
+//{
+//     "add-skill"           : ( title: string ) => void,
+//     "add-person"          : ( name: string ) => void,
+//     "zoom-extends"        : () => void,
+//     "zoom-to"             : ( shape: Aspect.Shape ) => void,
+//     "pack-view"           : () => void,
+//     "open-contextal-menu" : ( x: number, y: number ) => void,
+//     "close-contextal-menu": () => void,
+//}
+
+
+command ( "open-contextal-menu", ( e: fabric.IEvent ) =>
 {
-     ( name: CommandNames ): void
-     ( name: string ): void
-}
+     contextualMenu.show ( e.pointer.x, e.pointer.y )
+} )
+
+command ( "close-contextal-menu", () =>
+{
+     contextualMenu.hide ()
+})
+
+command ( "add-skill", ( title ) =>
+{
+     console.log ( "Add skill" )
+})
+
+command ( "add-person", ( name ) =>
+{
+
+})
+
+command ( "zoom-extends", () =>
+{
+     area.zoom ()
+})
+
+command ( "zoom-to", ( shape ) =>
+{
+     // area.zoom ( shape )
+     // area.isolate ( shape )
+})
+
+command ( "pack-view", () =>
+{
+     area.pack ()
+})

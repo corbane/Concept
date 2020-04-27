@@ -1,10 +1,13 @@
 
-import { xnode, Component, define } from "../../index.js"
-import * as db from "../../../Application/Data/db.js"
+import { Component } from "../../Base/Component/index.js"
+import { xnode } from "../../Base/xnode.js"
+import { define } from "../../db.js"
+import * as db from "../../../Application/data.js"
+
 
 declare global
 {
-     export interface $SkillViewer extends $Component
+     interface $SkillViewer extends $Component
      {
           type: "skill-viewer"
      }

@@ -2,7 +2,6 @@
 
 import * as ui from "../Ui/index.js"
 import { SideMenu } from "../Ui/index.js"
-import { addCommand } from "./command.js"
 
 
 //export const menu = createMenu ()
@@ -18,10 +17,10 @@ export const menu = ui.make <SideMenu, $SideMenu> ({
 })
 document.body.append ( ... menu.getHtml () )
 
-export type MenuCommands = {
-     "open-menu": () => void,
-     "close-menu": () => void,
-}
+//export type MenuCommands = {
+//     "open-menu": () => void,
+//     "close-menu": () => void,
+//}
 
 //addCommand ( "open-menu", () => { menu.open () })
 //addCommand ( "close-menu", () => { menu.close () })

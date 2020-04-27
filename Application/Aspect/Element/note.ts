@@ -1,5 +1,3 @@
-// <reference path="../../typings.d.ts" />
-//import * as fabric from "fabric/fabric-impl.js"
 
 import { Shape } from "./shape.js"
 

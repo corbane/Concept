@@ -1,13 +1,14 @@
 
 //  .side-menu
-//      .side-menu-main-button
 //      .side-menu-header
+//          .side-menu-main-button
+//          ... other buttons
 //      .side-menu-content
 
-//  LAYOUT
-
-@header_size: 80px;
-@padding    : 20px;
+@LigthTeal     : #00c0aa;
+@DarkGray      : #333333;
+@header_size   : 80px;
+@padding       : 20px;
 
 .side-menu {
     position: fixed;
@@ -37,7 +38,6 @@
     &.horizontal {
         max-width: 90%;
         min-width: 0%;
-        height: 100%;
     }
     &.horizontal.open {
         width: 200px; // Mis à jour par le script
@@ -60,6 +60,36 @@
     }
 }
 
+.side-menu-header {
+    position: relative;
+
+    display : flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    //.layout-vertical
+    .vertical > & {
+        width: 100%;
+        height: @header_size;
+        flex-direction: row;
+    }
+    .horizontal > & {
+        width: @header_size;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    // Affiche les bouttons si le panneau est fermé
+    .bottom > & { bottom: @header_size; }
+    .right  > & { right : @header_size; }
+    .top    > & { top   : 100%; }
+    .left   > & { left  : 100%; }
+}
+.side-menu-header {
+    font-size: 1.3em;
+}
+
+
 .side-menu-main-button {
     .base_button();
     width   : @header_size;
@@ -71,30 +101,9 @@
     .right  > & { left  : -@header_size; }
     //.left   > & { right : -@header_size; }
 }
-
-.side-menu-header {
-    position: relative;
-
-    display : flex;
-    justify-content: flex-end;
-    align-items: stretch;
-
-    .vertical > & {
-        width: 100%;
-        //height: @header_size;
-        flex-direction: row;
-    }
-    .horizontal > & {
-        width: @header_size;
-        //height: 100%;
-        flex-direction: column;
-    }
-
-    // Affiche les bouttons si le panneau est fermé
-    .bottom > & { bottom: @header_size; }
-    .right  > & { right : @header_size; }
-    .top    > & { top   : 100%; }
-    .left   > & { left  : 100%; }
+.side-menu-main-button {
+    background-color: @LigthTeal;
+    &:hover { background-color: #6dd1c5; }
 }
 
 .side-menu-content {
@@ -113,36 +122,44 @@
         top     : 0;
     }
 
-    //.vertical.close   > & { overflow-y: hidden; }
-    //.horizontal.close > & { overflow-y: hidden; }
-
     &.hidden, &.hidden * {
         overflow: hidden;
     }
 }
-
-//  STYLE
-
-@LigthTeal     : #00c0aa;
-@DarkGray      : #333333;
-
-.side-menu-header {
-    font-size: 1.3em;
-}
 .side-menu-content {
-    background-color: white;
-}
-
-.side-menu-content {
+    /*background-color: white;*/
     background-color: @LigthTeal;
 }
 
+.toolbar {
+    .side-menu & {
+        background-color: rgba(255, 255, 255, 1);
+        opacity: 0.5;
+        transition: opacity 0.4s;
+    }
 
-.side-menu-main-button {
-    background-color: @LigthTeal;
+    .side-menu.open & {
+        opacity: 1;
+    }
 
-    &:hover {
-        background-color: #6dd1c5;
+    .side-menu.top & {
+        border-bottom-color: #bdbdbd;
+        border-bottom-width: 1px;
+        border-bottom-style: dotted;
+    }
+    .side-menu.bottom & {
+        border-top-color: #bdbdbd;
+        border-top-width: 1px;
+        border-top-style: dotted;
+    }
+    .side-menu.left & {
+        border-right-color: #bdbdbd;
+        border-right-width: 1px;
+        border-right-style: dotted;
+    }
+    .side-menu.right & {
+        border-left-color: #bdbdbd;
+        border-left-width: 1px;
+        border-left-style: dotted;
     }
 }
-

@@ -1,31 +1,29 @@
-// <reference path="../../typings.d.ts" />
-//import * as fabric from "fabric/fabric-impl.js"
 
-import { Geometry } from "../Geometry/geometry.js"
-
+import { Geometry } from "../geometry.js"
 import { Ctor as DataCtor } from "../../../Data/index.js"
-import { $Geometry } from "../Geometry/geometry.js"
 
-export interface $ShapeEvents <D extends $Node = any>
+declare global
 {
-     onCreate: ( entity: D, aspect: Shape ) => void,
-     onDelete: ( entity: D, shape: Shape ) => void,
-     onTouch: ( aspect: Shape ) => void
+     interface $ShapeEvents <D extends $Node = any>
+     {
+          onCreate: ( entity: D, aspect: Shape ) => void,
+          onDelete: ( entity: D, shape: Shape ) => void,
+          onTouch: ( aspect: Shape ) => void
+     }
+
+     interface $Shape <D extends $Thing = $Thing> extends $Node, $Geometry, $ShapeEvents
+     {
+          context: "concept-aspect"
+
+          data: D
+
+          minSize   : number
+          sizeOffset: number
+          sizeFactor: number
+     }
 }
 
-export interface $Shape <D extends $Thing = $Thing> extends $Node, $Geometry, $ShapeEvents
-{
-     context: "concept-aspect"
-
-     data: D
-
-     minSize   : number
-     sizeOffset: number
-     sizeFactor: number
-}
-
-export type Ctor <Data extends $Shape = $Shape, T extends Shape = Shape>
-               = DataCtor <Data, T>
+export type Ctor <Data extends $Shape = $Shape, T extends Shape = Shape> = DataCtor <Data, T>
 
 export class Shape <$ extends $Shape = $Shape>
 {
@@ -66,7 +64,6 @@ export class Shape <$ extends $Shape = $Shape>
 
      constructor ( data: $ )
      {
-          //console.log ( "Updata here Shape.data " + data.data )
           this.background = undefined
           this.border = undefined
           this.config = {
@@ -74,11 +71,6 @@ export class Shape <$ extends $Shape = $Shape>
                ... data
           }
 
-     //      this.init ()
-     // }
-
-     // init ()
-     // {
           const { config } = this
 
           const group = this.group = new fabric.Group ( [],
@@ -87,18 +79,13 @@ export class Shape <$ extends $Shape = $Shape>
                height     : this.displaySize (),
                left       : config.x,
                top        : config.y,
-               hasBorders : true,                  // false,
-               hasControls: true,                  // false,
+               hasBorders : true,
+               hasControls: true,
                originX    : "center",
                originY    : "center",
           })
 
           ;(this.background as Geometry) = new Geometry ( this )
-          //group.add ( this.background.object )
-          //this.background.object.sendToBack ()
-
-          // ;(this.border as Geometry) = new Geometry ( this, this.config )
-          // group.add ( this.border.object )
 
           group.setCoords ()
      }
@@ -154,17 +141,11 @@ export class Shape <$ extends $Shape = $Shape>
 
           config.x = x
           config.y = y
-
-          group.set ({
-               left: x,
-               top : y
-          })
-          .setCoords ()
+          group.set ({ left: x, top : y }).setCoords ()
 
           if ( group.canvas )
                group.canvas.requestRenderAll ()
      }
-
 
      hover ( up: boolean )
      {

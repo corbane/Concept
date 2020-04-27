@@ -8,7 +8,7 @@ type Direction = "lr" | "rl" | "tb" | "bt"
 
 declare global
 {
-     export interface $Container <C extends $Component = $AnyComponents> extends $Component //Data.$Cluster <C>
+     interface $Container <C extends $Component = $AnyComponents> extends $Component //Data.$Cluster <C>
      {
           direction?: Direction
           children?: C [] // Record <string,  C>
@@ -130,9 +130,11 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                }
                else if ( !(e instanceof Component) )
                {
-                    e = inStock ( e )
-                      ? pick ( e )
-                      : make ( e )
+                    e = inStock ( e ) ? pick ( e ) : make ( e )
+               }
+               else
+               {
+                    throw `Unable to add a child of type ${ typeof e }`
                }
 
                children [(e as Component).data.id] = e as Component
@@ -157,27 +159,5 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                this.container.innerHTML = ""
      }
 
-     getOrientation ()
-     {
-          return this.data.direction
-     }
-
-     setOrientation ( value: Direction )
-     {
-          const config = this.data
-
-          if ( value == config.direction )
-               return
-
-          const container = this.container
-
-          if ( this.is_vertical )
-               container.classList.add ( "vertical" )
-          else
-               container.classList.remove ( "vertical" )
-
-          config.direction = value
-          ;(this.is_vertical as boolean) = value == "bt" || value == "tb"
-     }
 }
 

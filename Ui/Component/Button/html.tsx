@@ -1,8 +1,9 @@
 
 import { Component } from "../../Base/Component/index.js"
 import { xnode }     from "../../Base/xnode.js"
-import { Commands }  from "../../Base/command.js"
+//import { Commands }  from "../../Base/command.js"
 import { define }    from "../../db.js"
+import { command } from "../../command.js"
 
 export class Button extends Component <$Button>
 {
@@ -32,7 +33,8 @@ export class Button extends Component <$Button>
                return
 
           if ( this.data.command )
-               Commands.current.run ( this.data.command )
+               //Commands.current.run ( this.data.command )
+               command ( this.data.command ).run ()
      }
 
      protected onHover ()

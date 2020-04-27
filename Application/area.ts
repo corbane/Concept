@@ -1,9 +1,10 @@
 
-import { RadialMenu } from "../Ui/Component/Circular-Menu/index.js"
+import { RadialMenu } from "../Ui/Component/CircularMenu/index.js"
 import { Area } from "../Ui/Component/Area/area.js"
-import * as Aspect from "./Aspect/index.js"
+//import * as Aspect from "./Aspect/index.js"
 
-import { addCommand, runCommand, CommandNames } from "./command.js"
+//import { addCommand, runCommand } from "./command.js"
+//import { command } from "./command.js"
 
 export const area =  (() =>
 {
@@ -22,7 +23,8 @@ export const contextualMenu = new RadialMenu ({
      type: "radial-menu",
      id: "area-menu",
      buttons: [
-          { type: "button", id: "add-thing" , text: "", icon: "&#xe3c8;", fontFamily: "Material Icons", callback: () => { runCommand ( "zoom-extends" ) } }, // details
+          //{ type: "button", id: "add-thing" , text: "", icon: "&#xe3c8;", fontFamily: "Material Icons", callback: () => { runCommand ( "zoom-extends" ) } }, // details
+          { type: "button", id: "add-thing" , text: "", icon: "&#xe3c8;", fontFamily: "Material Icons" }, // details
           { type: "button", id: "add-bubble", text: "", icon: "&#xe6dd;", fontFamily: "Material Icons" },
           { type: "button", id: "add-note"  , text: "", icon: "&#xe244;", fontFamily: "Material Icons", command: "pack-view" }, // format_quote
           { type: "button", id: "add-people", text: "", icon: "&#xe87c;", fontFamily: "Material Icons" }, // face
@@ -33,72 +35,13 @@ export const contextualMenu = new RadialMenu ({
 
 document.body.append ( ... contextualMenu.getHtml () )
 
-// COMMANDS
-
-export type AreaCommands =
-{
-     "add-skill"           : ( title: string ) => void,
-     "add-person"          : ( name: string ) => void,
-     "zoom-extends"        : () => void,
-     "zoom-to"             : ( shape: Aspect.Shape ) => void,
-     "pack-view"           : () => void,
-     "open-contextal-menu" : ( x: number, y: number ) => void,
-     "close-contextal-menu": () => void,
-}
-
-addCommand ( "open-contextal-menu", ( x: number, y: number ) =>
-{
-     contextualMenu.show ( x, y )
-})
-
-addCommand ( "close-contextal-menu", () =>
-{
-     contextualMenu.hide ()
-})
-
-addCommand ( "add-skill", ( title ) =>
-{
-     console.log ( "Add skill" )
-})
-
-addCommand ( "add-person", ( name ) =>
-{
-
-})
-
-addCommand ( "zoom-extends", () =>
-{
-     area.zoom ()
-})
-
-addCommand ( "zoom-to", ( shape ) =>
-{
-     area.zoom ( shape )
-     area.isolate ( shape )
-})
-
-addCommand ( "pack-view", () =>
-{
-     area.pack ()
-})
 
 // CLICK EVENTS
 
 // area.onTouchObject = ( shape ) =>
 // {
-//      runCommand ( "zoom-to", shape )
+//      run Command ( "zoom-to", shape )
 // }
-
-area.onDoubleTouchObject = ( shape ) =>
-{
-     if ( shape.config.onTouch != undefined )
-          shape.config.onTouch ( shape )
-}
-
-area.onTouchArea = ( x, y ) =>
-{
-     runCommand ( "open-contextal-menu", x, y )
-}
 
 // HOVER EVENTS
 

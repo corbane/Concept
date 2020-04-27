@@ -7,6 +7,7 @@ export type ExtendedCSSStyleDeclaration = CSSStyleDeclaration &
     overflowX    : "visible" | "hidden" | "scroll" | "auto" | "initial" | "inherit"
     overflowY    : "visible" | "hidden" | "scroll" | "auto" | "initial" | "inherit"
     position     : "static" | "absolute" | "fixed" | "relative" | "sticky" | "initial" | "inherit"
+    "z-index"    : number | string
 }
 
 declare global
@@ -15,6 +16,12 @@ declare global
      {
           on: Window ["addEventListener"]
           off: Window ["removeEventListener"]
+     }
+
+     interface Document
+     {
+          on: Document ["addEventListener"]
+          off: Document ["removeEventListener"]
      }
 
      interface Element
@@ -28,10 +35,12 @@ declare global
           off: HTMLElement ["removeEventListener"]
           $  : HTMLElement ["querySelector"]
           $$ : HTMLElement ["querySelectorAll"]
+
+          $ClosetParent: ( cls: string ) => null | Element
      }
 }
 
-export function init ()
+function init ()
 {
 
      Window.prototype.on  = Window.prototype.addEventListener
@@ -81,22 +90,19 @@ export function init ()
 
      Element.prototype.$$  = Element.prototype.querySelectorAll
 
-
-     Element.prototype.cssInt = function ( property: string )
+     Element.prototype.$ClosetParent = ( cls: string ) =>
      {
-          var value = parseInt ( this.style [ property ] )
+          var parent = this as Element
 
-          if ( Number.isNaN ( value ) )
+          while ( parent && parent as any !== document )
           {
-               const style = window.getComputedStyle ( this )
+               if ( parent.classList.contains (cls) )
+                    return parent;
 
-               value = parseInt ( style [ property ] )
-
-               if ( Number.isNaN ( value ) )
-                    value = 0
+               parent = parent.parentElement;
           }
 
-          return value
+          return null;
      }
 
 }

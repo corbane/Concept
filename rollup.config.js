@@ -4,16 +4,15 @@ import sourcemaps from 'rollup-plugin-sourcemaps'
 
 export default {
     input: "Demo/out/Demo/index.js",
-    external: ["fabric", "faker", "fabric/fabric-impl"],
+    external: ["fabric", "faker"],
     output: {
       file     : "Demo/js/index.js",
       format   : "iife",
       name     : "concept",
       sourcemap: "inline",
       globals: {
-        fabric: "fabric",
         faker : "faker",
-        "fabric/fabric-impl" : "fabric",
+        fabric: "fabric",
       }
     },
     plugins: [
