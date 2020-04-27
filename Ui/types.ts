@@ -5,7 +5,7 @@ declare global
                = $Button
                //| $Panel
                | $SideMenu
-               | $Block
+               //| $Block
                | $Phantom
                | $Slide
                | $Slideshow

@@ -12,7 +12,7 @@ export * from "./Base/Container/index.js"
 
 export * from "./types.js"
 export * from "./Component/Phantom/index.js"
-export * from "./Component/Bar/index.js"
+//export * from "./Component/Bar/index.js"
 export * from "./Component/Button/index.js"
 export * from "./Component/SlideShow/index.js"
 export * from "./Component/Toolbar/index.js"
