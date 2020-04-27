@@ -51,36 +51,6 @@ export class Component <$ extends $Component = $Component>
 
      }
 
-     protected makeHtml ()
-     {
-          throw new Error ("Not implemented")
-     }
-
-     protected makeSvg ()
-     {
-          throw new Error ("Not implemented")
-     }
-
-     protected makeFabric ()
-     {
-          throw new Error ("Not implemented")
-     }
-
-     onCreateHtml ()
-     {
-
-     }
-
-     onCreateSvg ()
-     {
-
-     }
-
-     onCreateFabric ()
-     {
-
-     }
-
 }
 
 

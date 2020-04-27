@@ -2,40 +2,14 @@
 import { pick, inStock, make } from "../../db.js"
 import { Component } from "../Component/index.js"
 
-type Direction = "lr" | "rl" | "tb" | "bt"
-
 declare global
 {
-     interface $Container <C extends $Component = $AnyComponents> extends $Component //Data.$Cluster <C>
+     interface $Container extends $Component
      {
-          direction?: Direction
-          children?: C [] // Record <string,  C>
+          direction?: "lr" | "rl" | "tb" | "bt"
+          children?: $AnyComponents []
      }
 }
-
-interface $Phantom extends $Component
-{
-     type: "phantom"
-     content: string
-}
-
-class Phantom extends Component <$Phantom>
-{
-     container: HTMLElement | SVGElement
-
-     /** @override */
-     getHtml ()
-     {
-          if ( this.container == undefined )
-          {
-               this.container = document.createElement ( "div" )
-               this.container.innerHTML = this.data.content
-          }
-
-          return this.container.childNodes as any as HTMLElement []
-     }
-}
-
 
 export class Container <$ extends $Container = $Container> extends Component <$>
 {
@@ -169,11 +143,6 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                this.onChildrenAdded ( new_child )
      }
 
-     remove ( ... elements: (string | Element | Component | $Component) [] )
-     {
-
-     }
-
      clear ()
      {
           this.children = {}
@@ -184,3 +153,26 @@ export class Container <$ extends $Container = $Container> extends Component <$>
 
 }
 
+
+interface $Phantom extends $Component
+{
+     type: "phantom"
+     content: string
+}
+
+class Phantom extends Component <$Phantom>
+{
+     container: HTMLElement | SVGElement
+
+     /** @override */
+     getHtml ()
+     {
+          if ( this.container == undefined )
+          {
+               this.container = document.createElement ( "div" )
+               this.container.innerHTML = this.data.content
+          }
+
+          return this.container.childNodes as any as HTMLElement []
+     }
+}
