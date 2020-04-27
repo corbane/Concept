@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 841 595" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <g transform="matrix(1,0,0,1,325.748,413.003)">
+        <text x="-96.579px" y="0px" style="font-family:'osifont';font-size:23.15px;fill:rgb(0,132,0);">SlideShow</text>
+    </g>
+    <g transform="matrix(1,0,0,1,617.056,352.459)">
+        <text x="-34.151px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Entity</text>
+    </g>
+    <g transform="matrix(1,0,0,1,617.169,400.612)">
+        <text x="-36.567px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Shape</text>
+    </g>
+    <g transform="matrix(1,0,0,1,617.056,448.766)">
+        <text x="-56.78px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Geometry</text>
+    </g>
+    <g transform="matrix(1,0,0,1,510.017,75.3144)">
+        <text x="-34.7px" y="0px" style="font-family:'osifont';font-size:34.725px;fill:rgb(105,52,132);">Area</text>
+    </g>
+    <g transform="matrix(-3.82857e-16,-1,1,-3.82857e-16,272.26,212.682)">
+        <text x="-72.954px" y="0px" style="font-family:'osifont';font-size:23.153px;fill:rgb(0,132,132);">T<tspan x="-63.061px " y="0px ">o</tspan>olBar</text>
+    </g>
+    <g transform="matrix(1,0,0,1,325.387,495.703)">
+        <text x="-90.43px" y="0px" style="font-family:'osifont';font-size:23.15px;fill:rgb(132,0,0);">SideMenu</text>
+    </g>
+    <g transform="matrix(1,0,0,1,142.182,91.5786)">
+        <text x="-26.632px" y="0px" style="font-family:'osifont';font-size:23.15px;">Panel</text>
+    </g>
+    <g transform="matrix(1,0,0,1,142.182,323.164)">
+        <text x="-26.632px" y="0px" style="font-family:'osifont';font-size:23.15px;">Panel</text>
+    </g>
+    <path d="M460.142,229.833C460.379,220.918 456.335,210.194 448.953,202.809C441.571,195.424 430.852,191.378 421.941,191.615C413.031,191.378 402.311,195.424 394.93,202.809C387.548,210.194 383.504,220.918 383.741,229.833C383.504,238.747 387.548,249.472 394.93,256.857C402.311,264.242 413.031,268.288 421.941,268.051C430.852,268.288 441.571,264.242 448.953,256.857C456.335,249.472 460.379,238.747 460.142,229.833Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
+    <path d="M583.731,208.85C584.038,197.314 578.805,183.435 569.252,173.878C559.699,164.321 545.827,159.085 534.295,159.392C522.764,159.085 508.892,164.321 499.339,173.878C489.786,183.435 484.553,197.314 484.86,208.85C484.553,220.387 489.786,234.266 499.339,243.823C508.892,253.38 522.764,258.616 534.295,258.309C545.827,258.616 559.699,253.38 569.252,243.823C578.805,234.266 584.038,220.387 583.731,208.85Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
+    <path d="M526.056,321.256C526.339,310.593 521.503,297.766 512.674,288.933C503.845,280.1 491.023,275.261 480.365,275.544C469.708,275.261 456.886,280.1 448.057,288.933C439.228,297.766 434.392,310.593 434.675,321.256C434.392,331.918 439.228,344.746 448.057,353.579C456.886,362.412 469.708,367.251 480.365,366.967C491.023,367.251 503.845,362.412 512.674,353.579C521.503,344.746 526.339,331.918 526.056,321.256Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
+    <rect x="60.922" y="49.402" width="165.323" height="496.196" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,0);stroke-width:1.44px;"/>
+    <rect x="69.189" y="57.672" width="148.791" height="479.656" style="fill:none;fill-rule:nonzero;stroke:rgb(132,0,0);stroke-width:1.44px;"/>
+    <path d="M69.189,545.598L69.189,553.868L780.078,553.868L780.078,41.132L69.189,41.132L69.189,49.402" style="fill:none;fill-rule:nonzero;stroke:rgb(105,52,132);stroke-width:1.44px;"/>
+    <path d="M209.713,537.328L209.713,297.5L77.455,297.5L77.455,537.328" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
+    <rect x="77.455" y="65.942" width="132.258" height="223.288" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
+    <rect x="242.778" y="107.292" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
+    <rect x="242.778" y="156.911" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
+    <rect x="242.778" y="57.672" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
+    <rect x="234.512" y="49.402" width="57.863" height="248.374" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,132);stroke-width:1.44px;"/>
+    <path d="M327.919,504.248L217.979,504.248" style="fill:none;fill-rule:nonzero;stroke:rgb(132,0,0);stroke-width:1.44px;"/>
+    <path d="M327.919,421.549L226.246,421.549" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,0);stroke-width:1.44px;"/>
+</svg>
