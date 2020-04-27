@@ -4,11 +4,11 @@ import { xnode } from "../xnode.js"
 
 declare global
 {
-     export interface $Component <C extends $Node = $Node> extends $Cluster <C>
+     interface $Component extends $Cluster
      {
           readonly context: "concept-ui"
           type: string
-          children?: C [] // Record <string, $Child>
+          children?: $Component [] // Record <string, $Child>
      }
 }
 

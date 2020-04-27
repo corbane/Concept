@@ -55,6 +55,7 @@ export class Toolbar extends ListView <$Toolbar>
           }
      }
 
+     /** @override */
      getHtml ()
      {
           if ( this.container != undefined )

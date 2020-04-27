@@ -7,6 +7,7 @@ import { command } from "../../command.js"
 
 export class Button extends Component <$Button>
 {
+     /** @override */
      getHtml ()
      {
           if ( this.container == undefined )

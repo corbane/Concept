@@ -44,6 +44,7 @@ export class SideMenu extends Container <$SideMenu>
      content    : Component
      header     : Component
 
+     /** @override */
      getHtml ()
      {
           const data = this.data

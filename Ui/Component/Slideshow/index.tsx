@@ -28,6 +28,7 @@ export class Slideshow extends Container <$Slideshow>
      current: Component
      private swipeable: SwipeableElement
 
+     /** @override */
      getHtml ()
      {
           const elements = super.getHtml ()

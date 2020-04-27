@@ -6,7 +6,7 @@ declare global
                //| $Panel
                | $SideMenu
                //| $Block
-               | $Phantom
+               //| $Phantom
                | $Slide
                | $Slideshow
                | $Toolbar

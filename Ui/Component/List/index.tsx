@@ -19,6 +19,7 @@ export class ListView <$ extends $Extends <$ListView>> extends Container <$>
 {
      swipeable: ExpendableElement
 
+     /** @override */
      getHtml ()
      {
           if ( this.container != undefined )

@@ -1,7 +1,7 @@
 
 import "../Ui/db.js"
 import "../Ui/Component/SlideShow/index.js"
-import "../Ui/Entity/Skill/index.js"
+import "../Ui/Component/Panel/skill.js"
 
 import * as ui from "../Ui/index.js"
 import { SideMenu } from "../Ui/index.js"

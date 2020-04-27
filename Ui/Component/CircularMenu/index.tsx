@@ -29,6 +29,7 @@ export class RadialMenu extends Component <$RadialMenu>
           "circle": this.renderSvgCircles.bind (this)
      }
 
+     /** @override */
      getHtml ()
      {
           this.update ()

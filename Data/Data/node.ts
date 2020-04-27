@@ -3,16 +3,16 @@
 
 declare global
 {
-     export interface $Node
+     interface $Node
      {
           readonly context: string
           readonly type: string
           readonly id: string
      }
 
-     export interface $Cluster <$Child extends $Node = $Node> extends $Node
+     interface $Cluster extends $Node
      {
-          children?: $Child []
+          children?: $Node []
      }
 }
 

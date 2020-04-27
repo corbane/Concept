@@ -11,8 +11,6 @@ export * from "./Base/Component/index.js"
 export * from "./Base/Container/index.js"
 
 export * from "./types.js"
-export * from "./Component/Phantom/index.js"
-//export * from "./Component/Bar/index.js"
 export * from "./Component/Button/index.js"
 export * from "./Component/SlideShow/index.js"
 export * from "./Component/Toolbar/index.js"
@@ -21,5 +19,5 @@ export * from "./Component/CircularMenu/index.js"
 
 export * from "./db.js"
 
-export * from "./Entity/Person/index.js"
-export * from "./Entity/Skill/index.js"
+export * from "./Component/Panel/person.js"
+export * from "./Component/Panel/skill.js"

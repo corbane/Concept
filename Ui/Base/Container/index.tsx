@@ -1,8 +1,6 @@
 
 import { pick, inStock, make } from "../../db.js"
 import { Component } from "../Component/index.js"
-import { Phantom } from "../../Component/Phantom/index.js"
-import { xnode } from "../xnode.js"
 
 type Direction = "lr" | "rl" | "tb" | "bt"
 
@@ -14,6 +12,30 @@ declare global
           children?: C [] // Record <string,  C>
      }
 }
+
+interface $Phantom extends $Component
+{
+     type: "phantom"
+     content: string
+}
+
+class Phantom extends Component <$Phantom>
+{
+     container: HTMLElement | SVGElement
+
+     /** @override */
+     getHtml ()
+     {
+          if ( this.container == undefined )
+          {
+               this.container = document.createElement ( "div" )
+               this.container.innerHTML = this.data.content
+          }
+
+          return this.container.childNodes as any as HTMLElement []
+     }
+}
+
 
 export class Container <$ extends $Container = $Container> extends Component <$>
 {
@@ -51,6 +73,7 @@ export class Container <$ extends $Container = $Container> extends Component <$>
           this.is_vertical = data.direction == "bt" || data.direction == "tb"
      }
 
+     /** @override */
      getHtml ()
      {
           if ( this.container != undefined )

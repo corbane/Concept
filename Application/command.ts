@@ -21,7 +21,7 @@ command ( "open-panel", () =>
 
 import * as ui from "../Ui/index.js"
 import { Slideshow } from "../Ui/index.js"
-import { SkillViewer } from "../Ui/Entity/Skill/index.js"
+import { SkillViewer } from "../Ui/Component/Panel/skill.js"
 import { getNode } from "./data.js";
 import { getAspect } from "./Aspect/db.js";
 import { Area } from "../Ui/Component/Area/area.js"
