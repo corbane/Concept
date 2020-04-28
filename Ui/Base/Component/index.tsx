@@ -6,7 +6,7 @@ declare global
 {
      interface $Component extends $Cluster
      {
-          readonly context: "concept-ui"
+          readonly context: typeof CONTEXT_UI
           type: string
           children?: $Component [] // Record <string, $Child>
      }
@@ -21,7 +21,7 @@ export class Component <$ extends $Component = $Component>
      defaultData () : $Component
      {
           return {
-               context: "concept-ui",
+               context: CONTEXT_UI,
                type   : "component",
                id     : undefined,
           }

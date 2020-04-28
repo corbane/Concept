@@ -1,5 +1,5 @@
 
-import { Optional, Require } from "../../Lib/typing.js"
+import { Optional, Require } from "../Lib/typing.js"
 import { DataTree } from "./data-tree.js"
 
 

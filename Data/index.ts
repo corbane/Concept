@@ -1,8 +1,8 @@
 
-export * from "./Data/node.js"
+export * from "./node.js"
 //export * from "./Data/cluster.js"
 
-export { Path } from "./Db/data-tree.js"
-export * from "./Db/db.js"
-export * from "./Db/factory.js"
-export * from "./Db/link.js"
+export { Path } from "./data-tree.js"
+export * from "./db.js"
+export * from "./factory.js"
+export * from "./link.js"

@@ -128,7 +128,7 @@ export class Toolbar extends ListView <$Toolbar>
      }
 }
 
-define ( Toolbar, ["toolbar"] )
+define ( Toolbar, [CONTEXT_UI, "toolbar"] )
 
 
 // type Direction = "lr" | "rl" | "tb" | "bt"

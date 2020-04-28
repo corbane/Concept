@@ -3,14 +3,12 @@ declare global
 {
      export type $AnyComponents
                = $Button
-               //| $Panel
                | $SideMenu
-               //| $Block
-               //| $Phantom
-               | $Slide
                | $Slideshow
                | $Toolbar
-
+               | $Panel
+               //| $Block
+               //| $Slide
                | $SkillViewer
                | $PersonViewer
 

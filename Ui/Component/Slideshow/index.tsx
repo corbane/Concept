@@ -5,14 +5,14 @@ import { define } from "../../db.js"
 
 declare global
 {
-     export interface $Slideshow extends $Container
+     interface $Slideshow extends $Container
      {
           type        : "slideshow"
           children    : $AnyComponents []
           isSwipeable?: boolean
      }
 
-     export interface $Slide extends $Container
+     interface $Slide extends $Container
      {
           type: "slide"
      }
@@ -73,5 +73,5 @@ export class Slideshow extends Container <$Slideshow>
      }
 }
 
-define ( Slideshow, ["slideshow"] )
-define ( Container, ["slide"]     )
+define ( Slideshow, [CONTEXT_UI, "slideshow"] )
+define ( Container, [CONTEXT_UI, "slide"]     )

@@ -1,50 +1,63 @@
 /// <reference path="./nodes.d.ts" />
 
 import { Database } from "../Data/index.js"
-import { Writable, Optional } from "../Lib/index.js"
+import { Optional } from "../Lib/index.js"
 
-const CONTEXT = "concept-data"
-const Data = new Database ()
 
-type $In <$ extends $Thing = $Thing> = Optional <$, "context">
-
-function normalize ( node: $In )
+declare global
 {
-     if ( "context" in node )
+     const CONTEXT_DATA: "concept-data"
+     // function node <T extends $InputNode> ( type: string, id: string )    : $OutputNode <T>
+     // function node <T extends $InputNode> ( type: string, description: T ): $OutputNode <T>
+     // function node <T extends $InputNode> ( description: T )              : $OutputNode <T>
+}
+Object.defineProperty ( globalThis, "CONTEXT_DATA", {
+     configurable: false,
+     writable: false,
+     value: "concept-data"
+})
+
+
+type $InputNode = Optional <$Thing, "context" | "type">
+type $OutputNode <In extends $InputNode> = Required <In>
+
+
+const db = new Database ()
+
+
+export function node <T extends $InputNode> ( type: string, id: string )    : $OutputNode <T>
+export function node <T extends $InputNode> ( type: string, description: T ): $OutputNode <T>
+export function node <T extends $Thing>     ( description: T )              : $Thing
+
+export function node ( a: string | $InputNode, b?: string | $InputNode ) : $Thing
+{
+     switch ( arguments.length )
      {
-          if ( node.context !== CONTEXT )
-               throw "Bad context value"
+     case 1: // data ( description )
+
+          if ( typeof a != "object" || a == null || Array.isArray (a) )
+               throw `Bad argument "description" : ${ a }`
+
+          b = a
+          a = b.type
+
+     case 2: // data ( type, id ) | data ( type, description )
+
+          if ( typeof a != "string" )
+               throw `Bad argument "type" : ${ a }`
+
+          if ( typeof b == "string" )
+               return db.get ( CONTEXT_DATA, a, b )
+
+          if ( typeof b != "object" || b == null || Array.isArray (b) )
+               throw `Bad argument "description" : ${ b }`
+
+          ;(b as any).context = CONTEXT_DATA
+          ;(b as any).type = a
+          return db.set ( b as $Thing )
+
+     default:
+          throw `Bad arguments: 2 arguments expected but ${ arguments.length } received`
      }
-     else
-     {
-          (node as Writable <$Node>).context = CONTEXT
-     }
-
-     return node as $Node
 }
 
-
-
-export function getNode <$ extends $Thing> ( node: $In ): $
-export function getNode <$ extends $Thing> ( ... path: string [] ): $
-export function getNode ()
-{
-     if ( arguments.length == 0 )
-          return
-
-     if ( arguments.length == 1 )
-          return Data.get ( normalize ( arguments [0] ) )
-     else
-          return Data.get ( CONTEXT, ... arguments )
-}
-
-export function setNode <$ extends $Thing> ( node: $In <$> )
-{
-     Data.set ( normalize ( node ) )
-}
-
-
-export function countData ( type: string )
-{
-     return Data.count ( "concept-data", type )
-}

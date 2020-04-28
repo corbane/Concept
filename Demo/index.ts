@@ -17,7 +17,8 @@ area.use ( view )
 const personNames = []
 for ( var i = 1 ; i <= 20 ; i++ )
 {
-     app.setNode <$Person> ({
+     app.node <$Person> ({
+          context  : CONTEXT_DATA,
           type     : "person",
           id       : "user" + i,
           firstName: faker.name.firstName (),
@@ -26,7 +27,8 @@ for ( var i = 1 ; i <= 20 ; i++ )
           isCaptain: randomInt (0,4) == 1 //i % 4 == 0,
      })
 
-     app.setNode <$Person> ({
+     app.node <$Person> ({
+          context  : CONTEXT_DATA,
           type     : "person",
           id       : "user" + (20 + i),
           firstName: faker.name.firstName (),
@@ -67,7 +69,7 @@ const badgePresets = { // Partial <$Badge>
 }
 
 for ( const name in badgePresets )
-     app.setNode ({ context: "concept-data", type: "badge", ... badgePresets [name] })
+     app.node ({ context: CONTEXT_DATA, type: "badge", ... badgePresets [name] })
 
 // Skills
 
@@ -80,11 +82,11 @@ for ( const name in badgePresets )
           const name = personNames.splice ( randomInt ( 1, personNames.length ), 1 ) [0]
 
           if ( name )
-               people.push ( app.getNode <$Person> ( "person", name ) )
+               people.push ( app.node <$Person> ( "person", name ) )
      }
 
-     app.setNode <$Skill> ({
-          context: "concept-data",
+     app.node <$Skill> ({
+          context: CONTEXT_DATA,
           type   : "skill",
           id     : name,
           icon   : name,

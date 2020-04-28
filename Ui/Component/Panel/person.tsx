@@ -2,17 +2,18 @@
 import { Component } from "../../Base/Component/index.js"
 import { xnode } from "../../Base/xnode.js"
 import { define } from "../../db.js"
+import { Panel } from "./index.js"
 
 declare global
 {
 
-     export interface $PersonViewer extends $Component
+     export interface $PersonViewer extends $Panel
      {
-          type: "person-viewer"
+          readonly type: "person-viewer"
      }
 }
 
-export class PersonVieweer extends Component <$PersonViewer>
+export class PersonViewer extends Component <$PersonViewer>
 {
      display ( person: $Person )
      {
@@ -34,8 +35,9 @@ export class PersonVieweer extends Component <$PersonViewer>
      }
 }
 
-define ( PersonVieweer, {
-     context: "concept-ui",
-     type   : "person-viewer",
-     id     : undefined,
+define ( PersonViewer, {
+     context : CONTEXT_UI,
+     type    : "person-viewer",
+     id      : undefined,
+     position: "left"
 })

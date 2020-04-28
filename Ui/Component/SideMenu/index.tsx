@@ -123,4 +123,4 @@ export class SideMenu extends Container <$SideMenu>
      }
 }
 
-define ( SideMenu, ["side-menu"] )
+define ( SideMenu, [CONTEXT_UI, "side-menu"] )

@@ -1,45 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 841 595" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
-    <g transform="matrix(1,0,0,1,325.748,413.003)">
-        <text x="-96.579px" y="0px" style="font-family:'osifont';font-size:23.15px;fill:rgb(0,132,0);">SlideShow</text>
-    </g>
-    <g transform="matrix(1,0,0,1,617.056,352.459)">
-        <text x="-34.151px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Entity</text>
-    </g>
-    <g transform="matrix(1,0,0,1,617.169,400.612)">
-        <text x="-36.567px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Shape</text>
-    </g>
-    <g transform="matrix(1,0,0,1,617.056,448.766)">
-        <text x="-56.78px" y="0px" style="font-family:'osifont';font-size:28.937px;fill:rgb(200,167,0);">Geometry</text>
-    </g>
-    <g transform="matrix(1,0,0,1,510.017,75.3144)">
-        <text x="-34.7px" y="0px" style="font-family:'osifont';font-size:34.725px;fill:rgb(105,52,132);">Area</text>
-    </g>
-    <g transform="matrix(-3.82857e-16,-1,1,-3.82857e-16,272.26,212.682)">
-        <text x="-72.954px" y="0px" style="font-family:'osifont';font-size:23.153px;fill:rgb(0,132,132);">T<tspan x="-63.061px " y="0px ">o</tspan>olBar</text>
-    </g>
-    <g transform="matrix(1,0,0,1,325.387,495.703)">
-        <text x="-90.43px" y="0px" style="font-family:'osifont';font-size:23.15px;fill:rgb(132,0,0);">SideMenu</text>
-    </g>
-    <g transform="matrix(1,0,0,1,142.182,91.5786)">
-        <text x="-26.632px" y="0px" style="font-family:'osifont';font-size:23.15px;">Panel</text>
-    </g>
-    <g transform="matrix(1,0,0,1,142.182,323.164)">
-        <text x="-26.632px" y="0px" style="font-family:'osifont';font-size:23.15px;">Panel</text>
-    </g>
-    <path d="M460.142,229.833C460.379,220.918 456.335,210.194 448.953,202.809C441.571,195.424 430.852,191.378 421.941,191.615C413.031,191.378 402.311,195.424 394.93,202.809C387.548,210.194 383.504,220.918 383.741,229.833C383.504,238.747 387.548,249.472 394.93,256.857C402.311,264.242 413.031,268.288 421.941,268.051C430.852,268.288 441.571,264.242 448.953,256.857C456.335,249.472 460.379,238.747 460.142,229.833Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
-    <path d="M583.731,208.85C584.038,197.314 578.805,183.435 569.252,173.878C559.699,164.321 545.827,159.085 534.295,159.392C522.764,159.085 508.892,164.321 499.339,173.878C489.786,183.435 484.553,197.314 484.86,208.85C484.553,220.387 489.786,234.266 499.339,243.823C508.892,253.38 522.764,258.616 534.295,258.309C545.827,258.616 559.699,253.38 569.252,243.823C578.805,234.266 584.038,220.387 583.731,208.85Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
-    <path d="M526.056,321.256C526.339,310.593 521.503,297.766 512.674,288.933C503.845,280.1 491.023,275.261 480.365,275.544C469.708,275.261 456.886,280.1 448.057,288.933C439.228,297.766 434.392,310.593 434.675,321.256C434.392,331.918 439.228,344.746 448.057,353.579C456.886,362.412 469.708,367.251 480.365,366.967C491.023,367.251 503.845,362.412 512.674,353.579C521.503,344.746 526.339,331.918 526.056,321.256Z" style="fill:none;fill-rule:nonzero;stroke:rgb(200,167,0);stroke-width:1.44px;"/>
-    <rect x="60.922" y="49.402" width="165.323" height="496.196" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,0);stroke-width:1.44px;"/>
-    <rect x="69.189" y="57.672" width="148.791" height="479.656" style="fill:none;fill-rule:nonzero;stroke:rgb(132,0,0);stroke-width:1.44px;"/>
-    <path d="M69.189,545.598L69.189,553.868L780.078,553.868L780.078,41.132L69.189,41.132L69.189,49.402" style="fill:none;fill-rule:nonzero;stroke:rgb(105,52,132);stroke-width:1.44px;"/>
-    <path d="M209.713,537.328L209.713,297.5L77.455,297.5L77.455,537.328" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
-    <rect x="77.455" y="65.942" width="132.258" height="223.288" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
-    <rect x="242.778" y="107.292" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
-    <rect x="242.778" y="156.911" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
-    <rect x="242.778" y="57.672" width="41.331" height="41.35" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.44px;"/>
-    <rect x="234.512" y="49.402" width="57.863" height="248.374" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,132);stroke-width:1.44px;"/>
-    <path d="M327.919,504.248L217.979,504.248" style="fill:none;fill-rule:nonzero;stroke:rgb(132,0,0);stroke-width:1.44px;"/>
-    <path d="M327.919,421.549L226.246,421.549" style="fill:none;fill-rule:nonzero;stroke:rgb(0,132,0);stroke-width:1.44px;"/>
+<svg width="841,92pt" height="595,2pt" viewBox="0 0 841.92 595.2" overflow="visible" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <text x="318.189267384802" y="422.356214357667" fill="#008400" font-family="osifont" text-anchor="end" font-size="23.6901683807373">SlideShow</text>
+  <text x="616.250292152891" y="360.398554729789" fill="#C8A700" font-family="osifont" text-anchor="middle" font-size="29.6127109527588">Entity</text>
+  <text x="616.365966809602" y="409.675958488939" fill="#C8A700" font-family="osifont" text-anchor="middle" font-size="29.6127109527588">Shape</text>
+  <text x="616.250292152891" y="458.953362248088" fill="#C8A700" font-family="osifont" text-anchor="middle" font-size="29.6127109527588">Geometry</text>
+  <text x="506.72952717833"  y="76.7875246547265" fill="#693484" font-family="osifont" text-anchor="middle" font-size="35.5352554321289">Area</text>
+  <text x="317.819108483325" y="506.985297422648" fill="#840000" font-family="osifont" text-anchor="end" font-size="23.6901683807373">SideMenu</text>
+  <text x="130.367309948926" y="93.4312352183966" fill="#000000" font-family="osifont" text-anchor="middle" font-size="23.6901683807373">Panel</text>
+  <text x="130.367309948926" y="330.420844902892" fill="#000000" font-family="osifont" text-anchor="middle" font-size="23.6901683807373">Panel</text>
+  <path d="M455.6982,234.9115 C455.9405,225.7889 451.8029,214.8141 444.2502,207.2567 C436.6973,199.6994 425.7292,195.5593 416.6122,195.8018 C407.4951,195.5593 396.5271,199.6994 388.9742,207.2567 C381.4214,214.8141 377.2838,225.7889 377.5262,234.9115 C377.2838,244.034 381.4214,255.0088 388.9742,262.5662 C396.5271,270.1235 407.4951,274.2635 416.6122,274.0211 C425.7292,274.2635 436.6973,270.1235 444.2502,262.5662 C451.8029,255.0088 455.9405,244.034 455.6982,234.9115 z" stroke="#C8A700" stroke-width="1.44" fill-opacity="0" />
+  <path d="M582.1526,213.4395 C582.4664,201.6338 577.1118,187.4313 567.3376,177.651 C557.5634,167.8709 543.3694,162.5132 531.5709,162.827 C519.7723,162.5132 505.5784,167.8709 495.8041,177.651 C486.0299,187.4313 480.6754,201.6338 480.9891,213.4395 C480.6754,225.2451 486.0299,239.4478 495.8041,249.2279 C505.5784,259.008 519.7723,264.3658 531.5709,264.0519 C543.3694,264.3658 557.5634,259.008 567.3376,249.2279 C577.1118,239.4478 582.4664,225.2451 582.1526,213.4395 z" stroke="#C8A700" stroke-width="1.44" fill-opacity="0" />
+  <path d="M523.1406,328.4678 C523.4304,317.5565 518.4816,304.4298 509.4478,295.3907 C500.4141,286.3514 487.2953,281.3996 476.3907,281.6896 C465.486,281.3996 452.3673,286.3514 443.3335,295.3907 C434.2997,304.4298 429.351,317.5565 429.6408,328.4678 C429.351,339.3791 434.2997,352.5057 443.3335,361.545 C452.3673,370.5842 465.486,375.5361 476.3907,375.246 C487.2953,375.5361 500.4141,370.5842 509.4478,361.545 C518.4816,352.5057 523.4304,339.3791 523.1406,328.4678 z" stroke="#C8A700" stroke-width="1.44" fill-opacity="0" />
+  <path d="M47.22384,50.27039 L216.3795,50.27039 L216.3795,558.0447 L47.22384,558.0447 z" stroke="#008400" stroke-width="1.44" fill-opacity="0" />
+  <path d="M55.68166,549.5819 L207.9218,549.5819 L207.9218,58.73331 L55.68166,58.73331 z" stroke="#840000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M224.8373,50.27042 L284.0418,50.27042 L284.0418,295.6947 L224.8373,295.6947 z" stroke="#008484" stroke-width="1.44" fill-opacity="0" />
+  <path d="M55.68166,558.0448 L55.68166,566.5077 L783.051,566.5077 L783.051,41.80751 L55.68166,41.80751 L55.68166,50.27042" stroke="#693484" stroke-width="1.44" fill-opacity="0" />
+  <path d="M199.4639,549.5819 L199.4639,304.1576 L64.13943,304.1576 L64.13943,549.5819" stroke="#000000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M64.13943,295.6947 L199.4639,295.6947 L199.4639,67.19622 L64.13943,67.19622 z" stroke="#000000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M233.295,151.8253 L275.584,151.8253 L275.584,109.5108 L233.295,109.5108 z" stroke="#000000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M233.295,202.6027 L275.584,202.6027 L275.584,160.2882 L233.295,160.2882 z" stroke="#000000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M233.295,101.0479 L275.584,101.0479 L275.584,58.73331 L233.295,58.73331 z" stroke="#000000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M320.4102,515.7303 L207.9218,515.7303" stroke="#840000" stroke-width="1.44" fill-opacity="0" />
+  <path d="M320.4102,431.1012 L216.3796,431.1012" stroke="#008400" stroke-width="1.44" fill-opacity="0" />
 </svg>

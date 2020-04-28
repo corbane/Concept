@@ -129,10 +129,6 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                {
                     e = inStock ( e ) ? pick ( e ) : make ( e )
                }
-               else
-               {
-                    throw `Unable to add a child of type ${ typeof e }`
-               }
 
                children [(e as Component).data.id] = e as Component
                slot.append ( ... (e as Component).getHtml () )
@@ -141,6 +137,21 @@ export class Container <$ extends $Container = $Container> extends Component <$>
 
           if ( new_child.length > 0 )
                this.onChildrenAdded ( new_child )
+     }
+
+     remove ( ... elements: Component [] )
+     {
+          const slot      = this.slot
+          const children  = this.children
+
+          for ( var e of elements )
+          {
+               if ( e.data.id in children )
+               {
+                    e.container.remove ()
+                    delete children [e.data.id]
+               }
+          }
      }
 
      clear ()

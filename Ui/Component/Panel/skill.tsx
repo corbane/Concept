@@ -1,27 +1,27 @@
 
-import { Component } from "../../Base/Component/index.js"
 import { xnode } from "../../Base/xnode.js"
+import { Panel } from "./index.js"
 import { define } from "../../db.js"
 import * as db from "../../../Application/data.js"
 
 
 declare global
 {
-     interface $SkillViewer extends $Component
+     interface $SkillViewer extends $Panel
      {
           type: "skill-viewer"
      }
 }
 
-export class SkillViewer extends Component <$SkillViewer>
+export class SkillViewer extends Panel <$SkillViewer>
 {
      display ( skill: $Skill )
      {
           const target = <div class="people"></div>
 
-          for ( const name of skill.items )
+          for ( const item of skill.items )
           {
-               const person = db.getNode <$Person> ( name )
+               const person = db.node <$Person> ( item.type, item.id )
 
                const card = <div class="w3-card-4 person-card">
                     <img src={ person.avatar } alt="Avatar"/>
@@ -50,7 +50,8 @@ export class SkillViewer extends Component <$SkillViewer>
 }
 
 define ( SkillViewer, {
-     context: "concept-ui",
-     type   : "skill-viewer",
-     id     : undefined,
+     context : CONTEXT_UI,
+     type    : "skill-viewer",
+     id      : undefined,
+     position: "left"
 })

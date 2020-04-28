@@ -16,6 +16,7 @@ export * from "./Component/SlideShow/index.js"
 export * from "./Component/Toolbar/index.js"
 export * from "./Component/SideMenu/index.js"
 export * from "./Component/CircularMenu/index.js"
+export * from "./Component/Area/area.js"
 
 export * from "./db.js"
 

@@ -1,13 +1,14 @@
 
 import "../../types.js"
-import { Component } from "../../Base/Component/index.jsx"
-import { SideMenu } from "../SideMenu/index.jsx"
+import * as ui from "../../db.js"
+import { Component } from "../../Base/Component/index.js"
+import { SideMenu } from "../SideMenu/index.js"
 
 declare global
 {
      interface $Panel extends $Component
      {
-          type         : "panel"
+          //type         : "panel"
           header?      : $AnyComponents,
           children?    : $AnyComponents []
           footer?      : $AnyComponents
@@ -54,6 +55,38 @@ export function panel ( a?: string | $Panel, b?: $Panel ): Panel
                throw `Bad panel definition : ${ b }`
 
           ;(b as any).id = a
+          //elems [a] = new Panel ( b )
+          elems [a] = ui.inStock ( b ) ? ui.pick ( b ) : ui.make ( b )
+          this.placeTo ( b.position );
+          break
+
+     default:
+          throw "Wrong function call"
+     }
+
+}
+
+
+
+type Direction = "lr" | "rl" | "tb" | "bt"
+
+const toPosition = {
+     lr : "left",
+     rl : "right",
+     tb : "top",
+     bt : "bottom",
+}
+
+//export /*abstract*/ class Panel <C extends $Panel = $Panel> extends Component <C>
+export /*abstract*/ class Panel <C extends $Panel = $Panel> extends Component <C>
+{
+     private menu: SideMenu
+
+     placeTo ( side: "left" | "right" | "top" | "bottom" )
+     {
+          const data = this.data
+
+          if ( data.position == side && this.menu != null ) return
 
           const cfg = {
                context      : "concept-ui" as "concept-ui",
@@ -63,7 +96,7 @@ export function panel ( a?: string | $Panel, b?: $Panel ): Panel
 
           var menu: SideMenu
 
-          switch ( b.position )
+          switch ( side )
           {
           case "left":
 
@@ -106,44 +139,11 @@ export function panel ( a?: string | $Panel, b?: $Panel ): Panel
                break
           }
 
-          break
+          if ( this.menu != undefined )
+               this.menu.remove ( this )
 
-     default:
-          throw "Wrong function call"
-     }
-
-     const panel = new Panel ( b, menu )
-     elems [a] = panel
-     menu.append ( panel )
-}
-
-
-
-type Direction = "lr" | "rl" | "tb" | "bt"
-
-const toPosition = {
-     lr : "left",
-     rl : "right",
-     tb : "top",
-     bt : "bottom",
-}
-
-class Panel extends Component <$Panel>
-{
-     content    : Component
-     header     : Component
-     _header: JSX.Element
-     _content: JSX.Element
-
-     constructor ( data: $Panel, private menu: SideMenu )
-     {
-          super ( data )
-     }
-
-     /** @override */
-     getHtml (): (HTMLElement | SVGElement) []
-     {
-          return super.getHtml ()
+          menu.append ( this )
+          data.position = side
      }
 
      open ()

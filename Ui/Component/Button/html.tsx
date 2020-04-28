@@ -45,4 +45,4 @@ export class Button extends Component <$Button>
 }
 
 
-define ( Button, ["button"] )
+define ( Button, [CONTEXT_UI, "button"] )

@@ -13,14 +13,11 @@ export class Badge extends Shape
      constructor ( options: $Shape )
      {
           super ( options )
-     // }
-     // init ()
-     // {
-     //      super.init ()
 
           const { group } = this
 
-          const entity = db.getNode <$Badge> ( this.config.data )
+          const thisdata = this.config.data
+          const entity = db.node <$Badge> ( thisdata.type, thisdata.id )
 
           const text = new fabric.Textbox ( entity.emoji || "X", {
                fontSize: this.displaySize (),

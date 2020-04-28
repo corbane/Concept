@@ -2,7 +2,7 @@
 import { Database } from "./db.js"
 import { DataTree, Path } from "./data-tree.js"
 
-import { Optional } from "../../Lib/index.js"
+import { Optional } from "../Lib/index.js"
 
 
 type Item <T = any, $ extends $Node = $Node> =
