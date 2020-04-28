@@ -18,12 +18,25 @@
         "declarationMap" : true,
         "declarationDir": "typings",
 
+        "isolatedModules": true,
+
         "baseUrl": ".",
         "paths": {
-            "@ui/*": [ "Ui/*" ],
+            "@lib"       : [ "Lib/index" ],
+            "@lib/*"     : [ "Lib/*" ],
+
+            "@data"      : [ "Data/index" ],
+            "@data/*"    : [ "Data/*" ],
+
+            "@aspect"    : [ "Aspect/index" ],
+            "@aspect/*"  : [ "Aspect/*" ],
+
+            "@ui"        : [ "Ui/index" ],
+            "@ui/*"      : [ "Ui/*" ],
             "@elements/*": [ "Ui/Elements/*" ],
-            "@app/*": [ "Application/*" ],
-            "@aspect/*": [ "Aspect/*" ],
+
+            "@app"       : [ "Application/index" ],
+            "@app/*"     : [ "Application/*" ],
         }
     }
 }

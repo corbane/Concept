@@ -1,3 +1,4 @@
+import "./Elements/panel-person"
 
 declare global
 {

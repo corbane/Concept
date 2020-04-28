@@ -10,7 +10,7 @@ import { Geometry } from "../../Lib/index"
 
 import { Shape }   from "@aspect/shape"
 import * as aspect from "@aspect/db"
-import * as db     from "@app/data"
+import * as db     from "@app/node"
 
 import "fabric"
 

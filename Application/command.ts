@@ -1,5 +1,5 @@
 
-import { Area } from "./Elements/area.js"
+import { Area } from "@elements/area"
 const cmds = {} as Record <string, Command>
 
 class Command

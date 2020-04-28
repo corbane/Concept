@@ -1,4 +1,6 @@
-// <reference path="../Data/index.ts" />
+
+import { Factory, Database } from "../Data/index.js"
+import { Component } from "./Elements/component.js"
 
 declare global
 {
@@ -11,14 +13,10 @@ Object.defineProperty ( globalThis, "CONTEXT_UI", {
      value: "concept-ui"
 } )
 
-import { Factory, Database } from "../Data/index.js"
-import { Component } from "./Elements/component.js"
-
-//const CONTEXT_UI = "concept-ui"
 const db      = new Database <$AnyComponents> ()
 const factory = new Factory <Component, $AnyComponents> ( db )
 
-export const inStock: typeof factory.inStock = function ()
+const inStock: typeof factory.inStock = function ()
 {
      const arg = arguments.length == 1
                ? normalize ( arguments [0] )
@@ -29,7 +27,7 @@ export const inStock: typeof factory.inStock = function ()
      return factory._inStock ( path )
 }
 
-export const pick: typeof factory.pick = function ( ... rest: any [] )
+const pick: typeof factory.pick = function ( ... rest: any [] )
 {
      const arg = arguments.length == 1
                ? normalize ( arguments [0] )
@@ -40,7 +38,7 @@ export const pick: typeof factory.pick = function ( ... rest: any [] )
      return factory._pick ( path )
 }
 
-export const make: typeof factory.make = function ()
+const make: typeof factory.make = function ()
 {
      const arg = arguments.length == 1
                ? normalize ( arguments [0] )
@@ -54,7 +52,7 @@ export const make: typeof factory.make = function ()
      return factory._make ( path, data )
 }
 
-export const set: typeof db.set = function ()
+const set: typeof db.set = function ()
 {
      const arg = normalize ( arguments [0] )
 
@@ -64,17 +62,18 @@ export const set: typeof db.set = function ()
           db.set ( arg, normalize ( arguments [1] ) )
 }
 
-export const define = factory.define.bind ( factory ) as typeof factory.define
-//export const define: typeof factory.define = function ( ctor: any, ... rest: any )
-//{
-//     const arg = rest.length == 1
-//               ? normalize ( rest [0] )
-//               : normalize ( [... rest] )
-//
-//     const path = factory.getPath ( arg )
-//
-//     factory._define ( ctor, path )
-//}
+const define = factory.define.bind ( factory ) as typeof factory.define
+
+export {
+     inStock,
+     pick,
+     make,
+     set,
+     define,
+}
+
+
+// Utilities
 
 
 function isNode ( obl: any )

@@ -1,8 +1,8 @@
 
 
-import { set, define } from "../db.js"
-import { xnode }       from "../Base/xnode.js"
-import { command }     from "../command.js"
+import { set, define } from "../db"
+import { xnode }       from "../Base/xnode"
+import { command }     from "../../Application/command"
 
 import { Component }   from "./component"
 

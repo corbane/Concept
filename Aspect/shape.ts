@@ -1,6 +1,6 @@
 
 import { Geometry } from "./geometry"
-import { Ctor as DataCtor } from "../Data/index"
+import { Ctor as DataCtor } from "@data"
 
 declare global
 {

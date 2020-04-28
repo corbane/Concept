@@ -9,12 +9,12 @@ export { Badge }    from "./badge"
 export { Group }    from "./group"
 
 
-import { node } from "../Application/data"
+import { node } from "../Application/node"
 import { getAspect, defineAspect, setAspect } from "./db"
 import { Shape }   from "./shape"
 import { Group }   from "./group"
 import { Badge }   from "./badge"
-import { command } from "../Ui/index"
+import { command } from "@app/command"
 
 
 defineAspect ( Shape    , "person" /* , { onCreate: () => ..., onTouch: () => ... } */ )

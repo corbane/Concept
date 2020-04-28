@@ -1,15 +1,20 @@
 
-import "../Lib/index"
-import "../Data/index"
+import "@lib"
+import "@data"
+import "@ui"
+import "@aspect"
 
-import "../Aspect/index"
 import { getAspect } from "../Aspect/db"
 
-export * from "./data.js"
-import * as db  from "./data"
+export * from "./node.js"
+import * as db  from "./node"
+import * as ui from "../Ui/db"
+import { command } from "./command"
 
-import * as ui from "../Ui/index"
-const command = ui.command
+import { SideMenu }    from "@ui/Elements/sidemenu"
+import { SkillViewer } from "@ui/Elements/panel-skill"
+import { RadialMenu }  from "@ui/Elements/circlemenu"
+import { Area }        from "@ui/Elements/area"
 
 // #region DRAWING AREA
 
@@ -22,10 +27,10 @@ export const area =  (() =>
 
      document.body.append ( canvas )
 
-     return new ui.Area ( canvas )
+     return new Area ( canvas )
 }) ()
 
-export const contextualMenu = new ui.RadialMenu ({
+export const contextualMenu = new RadialMenu ({
      context: "concept-ui",
      type: "radial-menu",
      id: "area-menu",
@@ -131,7 +136,7 @@ else
 
 // #region MENU
 
-export const menu = ui.make <ui.SideMenu, $SideMenu> ({
+export const menu = ui.make <SideMenu, $SideMenu> ({
      context      : CONTEXT_UI,
      type         : "side-menu",
      id           : "menu",
@@ -146,7 +151,7 @@ document.body.append ( ... menu.getHtml () )
 
 var direction = "rl" as "rl" | "lr" | "tb" | "bt"
 
-export const panel = ui.make <ui.SideMenu, $SideMenu> ({
+export const panel = ui.make <SideMenu, $SideMenu> ({
      context      : CONTEXT_UI,
      type         : "side-menu",
      id           : undefined,
@@ -196,7 +201,7 @@ document.body.append ( ... panel.getHtml () )
 
 // Pannels commands
 
-const slideInfos = ui.pick <ui.SkillViewer> ( "skill-viewer", "slide-skill" )
+const slideInfos = ui.pick <SkillViewer> ( "skill-viewer", "slide-skill" )
 
 command ( "open-panel", ( name, ... content ) =>
 {
@@ -208,7 +213,7 @@ command ( "open-panel", ( name, ... content ) =>
 
 command ( "open-infos-panel", ( e ) =>
 {
-     const aspect = getAspect ( ui.Area.currentEvent.target )
+     const aspect = getAspect ( Area.currentEvent.target )
 
      if ( aspect )
      {

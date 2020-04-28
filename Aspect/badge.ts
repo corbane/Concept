@@ -1,5 +1,5 @@
 
-import * as db from "../Application/data"
+import * as db from "../Application/node"
 import { Shape } from "./shape"
 
 export type BadgePosition = { angle: number, offset: number }

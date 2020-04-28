@@ -1,5 +1,5 @@
 
-import { pick, inStock, make } from "@ui/db"
+import { pick, inStock, make } from "../db"
 import { Component } from "./component"
 
 declare global

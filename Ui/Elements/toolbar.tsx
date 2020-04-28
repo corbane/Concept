@@ -4,8 +4,8 @@ import { Container } from "./container.js"
 import { ExpendableElement, expandable } from "../Base/expendable.js"
 import { cssFloat } from "../Base/dom.js"
 import { Component } from "./component.js"
-
-import { define } from "../db.js"
+import "./button"
+import { define } from "../db"
 
 declare global
 {
