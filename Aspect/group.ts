@@ -1,9 +1,9 @@
 
-import { Geometry } from "../../../Lib/index.js"
-import { getAspect } from "../db.js"
-import { Shape } from "./shape.js"
+import { Geometry } from "../Lib/index"
+import { getAspect } from "./db"
+import { Shape } from "./shape"
 
-export class Container <$ extends $Shape <$Group> = $Shape <$Group>> extends Shape <$>
+export class Group <$ extends $Shape <$Group> = $Shape <$Group>> extends Shape <$>
 {
      readonly children: Shape []
 

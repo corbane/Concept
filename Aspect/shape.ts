@@ -1,6 +1,6 @@
 
-import { Geometry } from "../geometry.js"
-import { Ctor as DataCtor } from "../../../Data/index.js"
+import { Geometry } from "./geometry"
+import { Ctor as DataCtor } from "../Data/index"
 
 declare global
 {

@@ -1,24 +1,24 @@
 
 
-export { defineAspect, getAspect, setAspect } from "./db.js"
+export { defineAspect, getAspect, setAspect } from "./db"
 
-export { Geometry } from "./geometry.js"
-export { Shape } from "./Element/shape.js"
-export { Note }      from "./Element/note.js"
-export { Badge }     from "./Element/badge.js"
-export { Container } from "./Element/group.js"
+export { Geometry } from "./geometry"
+export { Shape }    from "./shape"
+export { Note }     from "./note"
+export { Badge }    from "./badge"
+export { Group }    from "./group"
 
 
-import { node } from "../data.js"
-import { getAspect, defineAspect, setAspect } from "./db.js"
-import { Shape } from "./Element/shape.js"
-import { Container } from "./Element/group.js"
-import { Badge }     from "./Element/badge.js"
-import { command } from "../../Ui/index.js"
+import { node } from "../Application/data"
+import { getAspect, defineAspect, setAspect } from "./db"
+import { Shape }   from "./shape"
+import { Group }   from "./group"
+import { Badge }   from "./badge"
+import { command } from "../Ui/index"
 
 
 defineAspect ( Shape    , "person" /* , { onCreate: () => ..., onTouch: () => ... } */ )
-defineAspect ( Container, "skill" )
+defineAspect ( Group, "skill" )
 defineAspect ( Badge    , "badge" )
 
 setAspect <$Shape> ({

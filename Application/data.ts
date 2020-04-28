@@ -1,7 +1,7 @@
 /// <reference path="./nodes.d.ts" />
 
-import { Database } from "../Data/index.js"
-import { Optional } from "../Lib/index.js"
+import { Database } from "../Data/index"
+import { Optional } from "../Lib/index"
 
 
 declare global

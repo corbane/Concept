@@ -6,11 +6,11 @@ https://movilab.org/index.php?title=Utilisateur:Aur%C3%A9lienMarty
 */
 
 
-import { Geometry } from "../../Lib/index.js"
+import { Geometry } from "../../Lib/index"
 
-import { Shape }   from "@app/Aspect/Element/shape.js"
-import * as aspect from "@app/Aspect/db.js"
-import * as db     from "@app/data.js"
+import { Shape }   from "@aspect/shape"
+import * as aspect from "@aspect/db"
+import * as db     from "@app/data"
 
 import "fabric"
 

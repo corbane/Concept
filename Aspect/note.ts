@@ -1,5 +1,5 @@
 
-import { Shape } from "./shape.js"
+import { Shape } from "./shape"
 
 export class Note extends Shape
 {

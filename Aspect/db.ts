@@ -1,23 +1,13 @@
-// <reference path="../typings.d.ts" />
-//import * as fabric from "fabric/fabric-impl"
 
-import { Database, Factory } from "../../Data/index.js"
-import { Shape } from "./Element/shape.js"
-import { Writable, Optional } from "../../Lib/index.js"
+import { Database, Factory } from "../Data/index"
+import { Shape } from "./shape"
+import { Writable, Optional } from "../Lib/index"
 
 
 const CONTEXT = "concept-aspect"
 const db      = new Database ()
 const factory = new Factory <Shape> ( db )
 const ASPECT  = Symbol.for ( "ASPECT" )
-
-// svgFactory
-// htmlFactory
-// fabricFactory
-
-// ui.factory.set ( ["concept-ui", "button", "html"  , "btn1"], ctor )
-// ui.factory.set ( ["concept-ui", "button", "svg"   , "btn1"], ctor )
-// ui.factory.set ( ["concept-ui", "button", "fabric", "btn1"], ctor )
 
 type $In <$ extends $Shape = $Shape> = Optional <$, "context">
 

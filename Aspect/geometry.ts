@@ -1,6 +1,5 @@
 
-import { Shape } from "./Element/shape.js"
-//import * as Factory from "./factory.js"
+import { Shape } from "./shape"
 
 declare global
 {

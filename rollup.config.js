@@ -24,6 +24,7 @@ export default {
                  { find: "@ui"      , replacement: outDir + "Ui" },
                  { find: "@elements", replacement: outDir + "Ui/Elements" },
                  { find: "@app"     , replacement: outDir + "Application" },
+                 { find: "@aspect"     , replacement: outDir + "Aspect" },
                ]
           }),
           sourcemaps(),

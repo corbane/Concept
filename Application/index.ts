@@ -1,14 +1,14 @@
 
-import "../Lib/index.js"
-import "../Data/index.js"
+import "../Lib/index"
+import "../Data/index"
 
-import "./Aspect/index.js"
-import { getAspect } from "./Aspect/db.js"
+import "../Aspect/index"
+import { getAspect } from "../Aspect/db"
 
 export * from "./data.js"
-import * as db  from "./data.js"
+import * as db  from "./data"
 
-import * as ui from "../Ui/index.js"
+import * as ui from "../Ui/index"
 const command = ui.command
 
 // #region DRAWING AREA
