@@ -5,7 +5,7 @@ mais niveau rapidité d'affichage ce n'est pas bon du tout ...
 
 import { Geometry }  from "../../Lib/index"
 import { Component } from "@ui/Elements/component"
-import * as Svg      from "@ui/Base/Svg/index"
+import * as Svg      from "@ui/Base/svg"
 import { xnode }     from "@ui/Base/xnode"
 
 const G = Geometry

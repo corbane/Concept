@@ -8,7 +8,7 @@ import { Component }   from "./component"
 
 declare global
 {
-     export interface $Button extends $Component
+     interface $Button extends $Component
      {
           type       : "button"
           icon       : string
@@ -19,27 +19,6 @@ declare global
           command?   : string,
           handleOn?  : "toggle" | "drag" | "*"
      }
-}
-
-const _Button = ( data: $Button ) =>
-{
-     const onTouch = () =>
-     {
-          if ( data.callback && data.callback () !== true )
-               return
-
-          if ( data.command )
-               //Commands.current.run ( data.command )
-               command ( data.command )
-     }
-
-     const node =
-          <div class="button" onClick={ data.callback || data.command ? onTouch : null }>
-               { data.icon ? <span class="icon">{ data.icon }</span> : null }
-               { data.text ? <span class="text">{ data.text }</span> : null }
-          </div>
-
-     return node
 }
 
 export class Button extends Component <$Button>
@@ -84,10 +63,8 @@ export class Button extends Component <$Button>
 
 define ( Button, [CONTEXT_UI, "button"] )
 
-export const $default = {
+set <$Button> ( [ "button" ], {
      type: "button" as "button",
      id  : undefined,
      icon: undefined,
-}
-
-set <$Button> ( [ "button" ], $default )
+})

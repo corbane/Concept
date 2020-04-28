@@ -1,5 +1,5 @@
 
-import { xnode } from "../xnode.js"
+import { xnode } from "./xnode"
 
 export type ShapeNames = keyof ShapeDefinitions
 
