@@ -1,7 +1,7 @@
-import { Geometry } from "../../../Lib/index.js"
-import { Component } from "../../Base/Component/index.js"
-import * as Svg from "../../Base/Svg/index.js"
-import { xnode } from "../../Base/xnode.js"
+import { Geometry } from "../../Lib/index.js"
+import { Component } from "../Component/index.js"
+import * as Svg from "../Base/Svg/index.js"
+import { xnode } from "../Base/xnode.js"
 
 const G = Geometry
 

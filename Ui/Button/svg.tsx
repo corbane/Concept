@@ -1,7 +1,7 @@
 import { $default }       from "./index.js"
-import { createSvgShape } from "../../Base/Svg/index.js"
-import { set, define }    from "../../db.js"
-import { Component }      from "../../Base/Component/index.js"
+import { createSvgShape } from "../Base/Svg/index.js"
+import { set, define }    from "../db.js"
+import { Component }      from "../Base/Component/index.js"
 
 declare global
 {

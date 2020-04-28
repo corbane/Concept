@@ -1,5 +1,5 @@
 
-import { pick, inStock, make } from "../../db.js"
+import { pick, inStock, make } from "../db.js"
 import { Component } from "../Component/index.js"
 
 declare global

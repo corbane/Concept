@@ -1,9 +1,9 @@
 
 
-import { set }      from "../../db.js"
+import { set }      from "../db.js"
 //import { Commands } from "../../Base/command.js"
-import { xnode }    from "../../Base/xnode.js"
-import { command } from "../../command.js"
+import { xnode }    from "../Base/xnode.js"
+import { command } from "../command.js"
 
 declare global
 {

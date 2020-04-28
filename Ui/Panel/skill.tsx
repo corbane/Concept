@@ -1,8 +1,8 @@
 
-import { xnode } from "../../Base/xnode.js"
+import { xnode } from "../Base/xnode.js"
 import { Panel } from "./index.js"
-import { define } from "../../db.js"
-import * as db from "../../../Application/data.js"
+import { define } from "../db.js"
+import * as db from "../../Application/data.js"
 
 
 declare global

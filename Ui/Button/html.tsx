@@ -1,9 +1,9 @@
 
-import { Component } from "../../Base/Component/index.js"
-import { xnode }     from "../../Base/xnode.js"
+import { Component } from "../Component/index.js"
+import { xnode }     from "../Base/xnode.js"
 //import { Commands }  from "../../Base/command.js"
-import { define }    from "../../db.js"
-import { command } from "../../command.js"
+import { define }    from "../db.js"
+import { command } from "../command.js"
 
 export class Button extends Component <$Button>
 {

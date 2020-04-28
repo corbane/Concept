@@ -1,6 +1,6 @@
 
-import { createNode } from "../../../Data/index.js"
-import { xnode } from "../xnode.js"
+import { createNode } from "../../Data/index.js"
+import { xnode } from "../Base/xnode.js"
 
 declare global
 {

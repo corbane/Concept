@@ -1,7 +1,7 @@
 
-import { Component } from "../../Base/Component/index.js"
-import { xnode } from "../../Base/xnode.js"
-import { define } from "../../db.js"
+import { Component } from "../Component/index.js"
+import { xnode } from "../Base/xnode.js"
+import { define } from "../db.js"
 import { Panel } from "./index.js"
 
 declare global

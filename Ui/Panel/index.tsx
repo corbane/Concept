@@ -1,7 +1,7 @@
 
-import "../../types.js"
-import * as ui from "../../db.js"
-import { Component } from "../../Base/Component/index.js"
+import "../types.js"
+import * as ui from "../db.js"
+import { Component } from "../Component/index.js"
 import { SideMenu } from "../SideMenu/index.js"
 
 declare global

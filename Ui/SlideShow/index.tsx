@@ -1,7 +1,7 @@
-import { Component } from "../../Base/Component/index.js"
-import { Container } from "../../Base/Container/index.js"
-import { swipeable, SwipeableElement } from "../../Base/swipeable.js"
-import { define } from "../../db.js"
+import { Component } from "../Component/index.js"
+import { Container } from "../Container/index.js"
+import { swipeable, SwipeableElement } from "../Base/swipeable.js"
+import { define } from "../db.js"
 
 declare global
 {

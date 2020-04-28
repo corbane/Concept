@@ -1,6 +1,4 @@
 
-import { Area } from "../Component/Area/area.js"
-
 interface EventConfig
 {
      onTap: () => void,

@@ -1,11 +1,11 @@
 
-import { xnode } from "../../Base/xnode.js"
-import { Container } from "../../Base/Container/index.js"
-import { ExpendableElement, expandable } from "../../Base/expendable.js"
-import { cssFloat } from "../../Base/dom.js"
-import { Component } from "../../Base/Component/index.js"
+import { xnode } from "../Base/xnode.js"
+import { Container } from "../Container/index.js"
+import { ExpendableElement, expandable } from "../Base/expendable.js"
+import { cssFloat } from "../Base/dom.js"
+import { Component } from "../Component/index.js"
 
-import { define } from "../../db.js"
+import { define } from "../db.js"
 
 interface $ListView extends $Container
 {
