@@ -1,16 +1,11 @@
 
 import { xnode } from "../Base/xnode.js"
-import { Container } from "../Container/index.js"
+import { Container } from "./container.js"
 import { ExpendableElement, expandable } from "../Base/expendable.js"
 import { cssFloat } from "../Base/dom.js"
-import { Component } from "../Component/index.js"
+import { Component } from "./component.js"
 
 import { define } from "../db.js"
-
-interface $ListView extends $Container
-{
-     type: "list-view"
-}
 
 declare global
 {
@@ -19,6 +14,11 @@ declare global
           type     : "toolbar"
           title    : string
           buttons  : $Button []
+     }
+
+     interface $ListView extends $Container
+     {
+          type: "list-view"
      }
 
 }
@@ -63,14 +63,14 @@ class ListView <$ extends $Extends <$ListView>> extends Container <$>
           return [this.container]
      }
 
-     onChildrenAdded ( elements: Component [] )
-     {
-          this.swipeable.updateConfig ({
-               minSize  : -this.slideSize (),
-               property : this.is_vertical ? "top": "left",
-               direction: this.data.direction,
-          })
-     }
+     // onChildrenAdded ( elements: Component [] )
+     // {
+     //      this.swipeable.updateConfig ({
+     //           minSize  : -this.slideSize (),
+     //           property : this.is_vertical ? "top": "left",
+     //           direction: this.data.direction,
+     //      })
+     // }
 
      private slideSize ()
      {

@@ -1,8 +1,8 @@
 
-import { Component } from "../Component/index.js"
+import { Component } from "./component.js"
 import { xnode } from "../Base/xnode.js"
 import { define } from "../db.js"
-import { Panel } from "./index.js"
+import { Panel } from "../panel.js"
 
 declare global
 {
@@ -39,5 +39,6 @@ define ( PersonViewer, {
      context : CONTEXT_UI,
      type    : "person-viewer",
      id      : undefined,
-     position: "left"
+     position: "left",
+     button  : null
 })

@@ -1,7 +1,12 @@
-import { Geometry } from "../../Lib/index.js"
-import { Component } from "../Component/index.js"
-import * as Svg from "../Base/Svg/index.js"
-import { xnode } from "../Base/xnode.js"
+/*
+Jolie ce petit menu contextuel,
+mais niveau rapidité d'affichage ce n'est pas bon du tout ...
+*/
+
+import { Geometry }  from "../../Lib/index"
+import { Component } from "@ui/Elements/component"
+import * as Svg      from "@ui/Base/Svg/index"
+import { xnode }     from "@ui/Base/xnode"
 
 const G = Geometry
 

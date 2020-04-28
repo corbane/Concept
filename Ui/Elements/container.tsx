@@ -1,6 +1,6 @@
 
-import { pick, inStock, make } from "../db.js"
-import { Component } from "../Component/index.js"
+import { pick, inStock, make } from "@ui/db"
+import { Component } from "./component"
 
 declare global
 {
@@ -80,16 +80,16 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                     children [o.data.id] = o
                }
 
-               this.onChildrenAdded ( new_children )
+               //this.onChildrenAdded ( new_children )
           }
 
           return elements
      }
 
-     onChildrenAdded ( components: Component [] )
-     {
+     //onChildrenAdded ( components: Component [] )
+     //{
 
-     }
+     //}
 
      append ( ... elements: (string | Element | Component | $AnyComponents) [] )
      {
@@ -135,8 +135,8 @@ export class Container <$ extends $Container = $Container> extends Component <$>
                new_child.push ( e as Component )
           }
 
-          if ( new_child.length > 0 )
-               this.onChildrenAdded ( new_child )
+          //if ( new_child.length > 0 )
+          //     this.onChildrenAdded ( new_child )
      }
 
      remove ( ... elements: Component [] )

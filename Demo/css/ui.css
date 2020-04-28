@@ -37,13 +37,6 @@ img.draggable {
   width: 60px;
   height: 60px;
 }
-.slideshow {
-  user-select: none;
-}
-.slideshow * {
-  user-select: none;
-  -webkit-user-drag: none;
-}
 .side-menu {
   position: fixed;
   overflow: auto;
@@ -197,6 +190,13 @@ img.draggable {
   border-left-color: #bdbdbd;
   border-left-width: 1px;
   border-left-style: dotted;
+}
+.slideshow {
+  user-select: none;
+}
+.slideshow * {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 .toolbar-background {
   display: flex;

@@ -12,7 +12,7 @@ Object.defineProperty ( globalThis, "CONTEXT_UI", {
 } )
 
 import { Factory, Database } from "../Data/index.js"
-import { Component } from "./Component/index.js"
+import { Component } from "./Elements/component.js"
 
 //const CONTEXT_UI = "concept-ui"
 const db      = new Database <$AnyComponents> ()

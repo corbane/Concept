@@ -1,6 +1,6 @@
 
 import { xnode } from "../Base/xnode.js"
-import { Panel } from "./index.js"
+import { Panel } from "../panel.js"
 import { define } from "../db.js"
 import * as db from "../../Application/data.js"
 
@@ -53,5 +53,6 @@ define ( SkillViewer, {
      context : CONTEXT_UI,
      type    : "skill-viewer",
      id      : undefined,
-     position: "left"
+     position: "left",
+     button: null
 })

@@ -16,6 +16,13 @@
         "removeComments": false,
         "declaration"   : true,
         "declarationMap" : true,
-        "declarationDir": "typings"
+        "declarationDir": "typings",
+
+        "baseUrl": ".",
+        "paths": {
+            "@ui/*": [ "Ui/*" ],
+            "@elements/*": [ "Ui/Elements/*" ],
+            "@app/*": [ "Application/*" ],
+        }
     }
 }

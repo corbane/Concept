@@ -136,7 +136,7 @@ export const menu = ui.make <ui.SideMenu, $SideMenu> ({
      type         : "side-menu",
      id           : "menu",
      hasMainButton: true,
-     direction    : "lr"
+     direction    : "bt"
 })
 document.body.append ( ... menu.getHtml () )
 
@@ -153,47 +153,42 @@ export const panel = ui.make <ui.SideMenu, $SideMenu> ({
      direction    : direction,
      hasMainButton: true,
 
-     header: {
-          context  : CONTEXT_UI,
-          type     : "toolbar",
-          id       : undefined,
-          title    : "Title ..",
-          direction: direction == "lr" || direction == "rl" ? "tb" : "lr",
+     buttons: [{
+          context : CONTEXT_UI,
+          type    : "button",
+          id      : "console",
+          icon    : "⚠",
+          text    : "",
+          handleOn: "*",
+          command : "pack-view"
+     }],
 
-          buttons: [{
+     children: [{
+          context : CONTEXT_UI,
+          type    : "skill-viewer",
+          id      : "slide-skill",
+          position: "left",
+          button : {
                context : CONTEXT_UI,
                type    : "button",
-               id      : "console",
-               icon    : "⚠",
-               text    : "",
+               id      : "skills",
+               icon    : "",
+               text    : "Skills",
                handleOn: "*",
-               command : "pack-view"
-          },{
+          },
+     },{
+          context : CONTEXT_UI,
+          type    : "person-viewer",
+          id      : "slide-person",
+          position: "left",
+          button : {
                context : CONTEXT_UI,
                type    : "button",
                id      : "properties",
                icon    : "",
-               text    : "panel properties",
+               text    : "Properties",
                handleOn: "*",
-          }]
-     },
-
-     children: [{
-          context: CONTEXT_UI,
-          type   : "slideshow",
-          id     : "panel-slideshow",
-
-          children: [{
-               context : CONTEXT_UI,
-               type    : "skill-viewer",
-               id      : "slide-skill",
-               position: "left"
-          },{
-               context : CONTEXT_UI,
-               type    : "person-viewer",
-               id      : "slide-person",
-               position: "left"
-          }]
+          },
      }]
 })
 
