@@ -3,6 +3,7 @@
 example:
 https://prezi.com/p/9jqe2wkfhhky/la-bulloterie-tpcmn/
 https://movilab.org/index.php?title=Utilisateur:Aur%C3%A9lienMarty
+
 */
 
 
@@ -10,7 +11,7 @@ import { Geometry } from "../../Lib/index"
 
 import { Shape }   from "@aspect/shape"
 import * as aspect from "@aspect/db"
-import * as db     from "@app/node"
+import * as db     from "@api/data"
 
 import "fabric"
 
@@ -118,14 +119,14 @@ export class Area
           if ( typeof arguments [0] == "string" )
           {
                //const node = db.getNode ( ... arguments as any as string [] )
-               const node = db.node ( arguments [0], arguments [1] as string  )
-               const shp = aspect.getAspect ( node )
+               const node = db.data ( arguments [0], arguments [1] as string  )
+               const shp = aspect.get ( node )
                active.children.push ( shp )
                fcanvas.add ( shp.group )
           }
           else for ( const s of arguments )
           {
-               const shp = aspect.getAspect ( s as $Node | Shape )
+               const shp = aspect.get ( s as $Node | Shape )
 
                // shp.getFabric
                // shp.getHtml
@@ -268,6 +269,39 @@ export class Area
           return cview.thumbnail = this.fcanvas.toDataURL ({ format: "jpeg" })
      }
 
+     /* TODO
+
+     grid ?
+
+          options = {
+               distance: 10,
+               width: c.width,
+               height: c.height,
+               param: {
+                    stroke: '#ebebeb',
+                    strokeWidth: 1,
+                    selectable: false
+               }
+          }
+          gridLen = options.width / options.distance;
+
+          c = canvas
+          for (var i = 0; i < gridLen; i++)
+          {
+               var distance   = i * options.distance,
+                    horizontal = new fabric.Line([ distance, 0, distance, options.width], options.param),
+                    vertical   = new fabric.Line([ 0, distance, options.width, distance], options.param);
+               c.add(horizontal);
+               c.add(vertical);
+               if ( i%5 === 0 )
+               {
+                    horizontal.set({stroke: '#cccccc'});
+                    vertical.set({stroke: '#cccccc'});
+               };
+          };
+
+     */
+
      // UI EVENTS
 
      enableEvents ()
@@ -315,7 +349,7 @@ export class Area
                {
                     if ( this.onTouchObject )
                     {
-                         const element = aspect.getAspect ( fevent.target )
+                         const element = aspect.get ( fevent.target )
 
                          Area.currentEvent = fevent;
                          if ( element )
@@ -342,7 +376,7 @@ export class Area
                {
                     if ( this.onDoubleTouchObject )
                     {
-                         const element = aspect.getAspect ( fevent.target )
+                         const element = aspect.get ( fevent.target )
 
                          Area.currentEvent = fevent;
                          if ( element )
@@ -377,7 +411,7 @@ export class Area
 
                if ( this.onOverObject )
                {
-                    const element = aspect.getAspect ( fevent.target )
+                    const element = aspect.get ( fevent.target )
 
                     Area.currentEvent = fevent;
                     if ( element )
@@ -392,7 +426,7 @@ export class Area
 
                if ( this.onOutObject )
                {
-                    const element = aspect.getAspect ( fevent.target )
+                    const element = aspect.get ( fevent.target )
 
                     Area.currentEvent = fevent;
                     if ( element )

@@ -1,5 +1,5 @@
 
-import * as db from "../Application/node"
+import * as db from "../Api/data"
 import { Shape } from "./shape"
 
 export type BadgePosition = { angle: number, offset: number }
@@ -17,7 +17,7 @@ export class Badge extends Shape
           const { group } = this
 
           const thisdata = this.config.data
-          const entity = db.node <$Badge> ( thisdata.type, thisdata.id )
+          const entity = db.data <$Badge> ( thisdata.type, thisdata.id )
 
           const text = new fabric.Textbox ( entity.emoji || "X", {
                fontSize: this.displaySize (),

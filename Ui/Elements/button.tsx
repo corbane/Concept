@@ -2,7 +2,7 @@
 
 import { set, define } from "../db"
 import { xnode }       from "../Base/xnode"
-import { command }     from "../../Application/command"
+import { command }     from "../../Api/command"
 
 import { Component }   from "./component"
 

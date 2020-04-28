@@ -5,8 +5,6 @@ export class Note extends Shape
 {
      init ()
      {
-          //super.init ()
-
           const { group } = this
 
           const text = new fabric.Textbox ( (this.config.data as any).text, {

@@ -4,33 +4,13 @@ import { Shape } from "./shape"
 import { Writable, Optional } from "../Lib/index"
 
 
-const CONTEXT = "concept-aspect"
+export const CONTEXT = "concept-aspect"
 const db      = new Database ()
 const factory = new Factory <Shape> ( db )
 const ASPECT  = Symbol.for ( "ASPECT" )
 
-type $In <$ extends $Shape = $Shape> = Optional <$, "context">
 
-/**
- * Assigne si besoin le contexte "aspect" au noeud
- */
-function normalize ( node: $In )
-{
-     if ( "context" in node )
-     {
-          if ( node.context !== CONTEXT )
-               throw "Bad context value"
-     }
-     else
-     {
-          (node as Writable <$Shape>).context = CONTEXT
-     }
-
-     return node as $Shape
-}
-
-
-export function getAspect <T extends Shape> ( obj: $Node | Shape | fabric.Object ): T | undefined
+export function get <T extends Shape> ( obj: $Node | Shape | fabric.Object ): T | undefined
 {
      if ( obj == undefined )
           return undefined
@@ -74,13 +54,36 @@ export function getAspect <T extends Shape> ( obj: $Node | Shape | fabric.Object
 }
 
 
-export function setAspect <$ extends $Shape> ( node: $In <$> )
+export function set <$ extends $Shape> ( node: $In <$> )
 {
      db.set ( normalize ( node ) )
 }
 
 
-export function defineAspect ( ctor: new ( data: $Shape ) => Shape, type: string )
+export function define ( ctor: new ( data: $Shape ) => Shape, type: string )
 {
      factory._define ( ctor, [CONTEXT, type] )
 }
+
+
+// Utilities
+
+
+type $In <$ extends $Shape = $Shape> = Optional <$, "context">
+
+
+function normalize ( node: $In )
+{
+     if ( "context" in node )
+     {
+          if ( node.context !== CONTEXT )
+               throw "Bad context value"
+     }
+     else
+     {
+          (node as Writable <$Shape>).context = CONTEXT
+     }
+
+     return node as $Shape
+}
+

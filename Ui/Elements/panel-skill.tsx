@@ -1,8 +1,8 @@
 
-import { xnode } from "../Base/xnode.js"
+import { xnode } from "../Base/xnode"
 import { define } from "../db"
-import { Panel } from "./panel.js"
-import * as db from "../../Application/node.js"
+import { Panel } from "./panel"
+import * as db from "@api/data"
 
 
 declare global
@@ -21,7 +21,7 @@ export class SkillViewer extends Panel <$SkillViewer>
 
           for ( const item of skill.items )
           {
-               const person = db.node <$Person> ( item.type, item.id )
+               const person = db.data <$Person> ( item.type, item.id )
 
                const card = <div class="w3-card-4 person-card">
                     <img src={ person.avatar } alt="Avatar"/>

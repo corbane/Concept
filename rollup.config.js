@@ -5,7 +5,10 @@ import sourcemaps from "rollup-plugin-sourcemaps"
 
 const outDir = __dirname + "/Demo/out/"
 
-export default {
+/**
+ * @type {import("rollup").RollupOptions}
+ */
+const options = {
      input   : outDir + "Demo/index.js",
      external: [ "fabric", "faker" ],
      output  : {
@@ -16,7 +19,8 @@ export default {
           globals: {
                faker: "faker",
                fabric: "fabric"
-          }
+          },
+
      },
      plugins: [
           alias ({
@@ -26,6 +30,7 @@ export default {
                  { find: "@ui"      , replacement: outDir + "Ui" },
                  { find: "@elements", replacement: outDir + "Ui/Elements" },
                  { find: "@aspect"  , replacement: outDir + "Aspect" },
+                 { find: "@api"     , replacement: outDir + "Api" },
                  { find: "@app"     , replacement: outDir + "Application" },
                ]
           }),
@@ -33,3 +38,4 @@ export default {
           resolve()
      ]
 }
+export default options

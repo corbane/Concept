@@ -1,6 +1,6 @@
 
-import { Geometry } from "../Lib/index"
-import { getAspect } from "./db"
+import { Geometry }  from "@lib"
+import { get }   from "./db"
 import { Shape } from "./shape"
 
 export class Group <$ extends $Shape <$Group> = $Shape <$Group>> extends Shape <$>
@@ -13,19 +13,12 @@ export class Group <$ extends $Shape <$Group> = $Shape <$Group>> extends Shape <
      {
           super ( options )
           this.children = []
-     // }
-
-     // init ()
-     // {
-     //      super.init ()
 
           const entity = this.config.data
 
-          //for ( const child of Object.values ( entity.children ) )
           for ( const child of Object.values ( entity.items ) )
           {
-               const a = getAspect ( child )
-               //a.init ()
+               const a = get ( child )
                this.add ( a )
           }
 

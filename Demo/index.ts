@@ -1,7 +1,8 @@
 /// <reference types="faker" />
 declare const faker: Faker.FakerStatic
 
-import * as app from "../Application/index.js"
+import * as app from "@app"
+import { data, alias } from "@api"
 
 const randomInt = (min: number, max: number) =>
 {
@@ -12,14 +13,16 @@ const area = app.area
 const view = area.createView ( "compétances" )
 area.use ( view )
 
+const person = alias <$Person> ( data, "person" )
+const badge  = alias <$Badge>  ( data, "badge" )
+const skill  = alias <$Skill>  ( data, "skill" )
+
 // Ici on ajoute des personnes à l’application.
 
 const personNames = []
 for ( var i = 1 ; i <= 20 ; i++ )
 {
-     app.node <$Person> ({
-          context  : CONTEXT_DATA,
-          type     : "person",
+     person ({
           id       : "user" + i,
           firstName: faker.name.firstName (),
           lastName : faker.name.lastName (),
@@ -27,9 +30,7 @@ for ( var i = 1 ; i <= 20 ; i++ )
           isCaptain: randomInt (0,4) == 1 //i % 4 == 0,
      })
 
-     app.node <$Person> ({
-          context  : CONTEXT_DATA,
-          type     : "person",
+     person ({
           id       : "user" + (20 + i),
           firstName: faker.name.firstName (),
           lastName : faker.name.lastName (),
@@ -51,45 +52,40 @@ for ( var i = 1 ; i <= 20 ; i++ )
 
 // https://www.echosciences-normandie.fr/communautes/le-dome/articles/badge-dome
 
-const badgePresets = { // Partial <$Badge>
-     default       : { id: "default"      , emoji: "🦁" },
-     hat           : { id: "hat"          , emoji: "🎩" },
-     star          : { id: "star"         , emoji: "⭐" },
-     clothes       : { id: "clothes"      , emoji: "👕" },
-     ecology       : { id: "ecology"      , emoji: "💧" },
-     programming   : { id: "programming"  , emoji: "💾" },
-     communication : { id: "communication", emoji: "📢" },
-     construction  : { id: "construction" , emoji: "🔨" },
-     biology       : { id: "biology"      , emoji: "🔬" },
-     robotic       : { id: "robotic"      , emoji: "🤖" },
-     game          : { id: "game"         , emoji: "🤡" },
-     music         : { id: "music"        , emoji: "🥁" },
-     lion          : { id: "lion"         , emoji: "🦁" },
-     voltage       : { id: "voltage"      , emoji: "⚡" },
-}
-
-for ( const name in badgePresets )
-     app.node ({ context: CONTEXT_DATA, type: "badge", ... badgePresets [name] })
+const badges = [
+     badge ( "default"      , { emoji: "🦁" } ),
+     badge ( "hat"          , { emoji: "🎩" } ),
+     badge ( "star"         , { emoji: "⭐" } ),
+     badge ( "clothes"      , { emoji: "👕" } ),
+     badge ( "ecology"      , { emoji: "💧" } ),
+     badge ( "programming"  , { emoji: "💾" } ),
+     badge ( "communication", { emoji: "📢" } ),
+     badge ( "construction" , { emoji: "🔨" } ),
+     badge ( "biology"      , { emoji: "🔬" } ),
+     badge ( "robotic"      , { emoji: "🤖" } ),
+     badge ( "game"         , { emoji: "🤡" } ),
+     badge ( "music"        , { emoji: "🥁" } ),
+     badge ( "lion"         , { emoji: "🦁" } ),
+     badge ( "voltage"      , { emoji: "⚡" } )
+]
 
 // Skills
 
-for ( const name in badgePresets )
+//for ( const name in badgePresets )
+for ( const badge of badges )
 {
      const people = [] as $Person []
 
      for ( var j = randomInt ( 0, 6 ) ; j > 0 ; j-- )
      {
           const name = personNames.splice ( randomInt ( 1, personNames.length ), 1 ) [0]
-
           if ( name )
-               people.push ( app.node <$Person> ( "person", name ) )
+               people.push ( data <$Person> ( "person", name ) )
      }
 
-     app.node <$Skill> ({
-          context: CONTEXT_DATA,
-          type   : "skill",
-          id     : name,
-          icon   : name,
+     skill ({
+          id     : badge.id,
+          icon   : badge.id,
           items  : people
      })
 
@@ -97,8 +93,8 @@ for ( const name in badgePresets )
 
 //
 
-for ( const name in badgePresets )
-     area.add ( "skill", name )
+for ( const badge of badges )
+     area.add ( "skill", badge.id )
 
 // Notes
 

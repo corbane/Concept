@@ -1,5 +1,5 @@
 
-import { Area } from "@elements/area"
+import { Area } from "@ui/Elements/area"
 const cmds = {} as Record <string, Command>
 
 class Command
